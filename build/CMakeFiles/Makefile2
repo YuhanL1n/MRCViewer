@@ -206,7 +206,7 @@ lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/core/CMakeFiles/co
 lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/util/CMakeFiles/util.dir/all
 	$(MAKE) -f lib/msg_map/src/test/CMakeFiles/test.dir/build.make lib/msg_map/src/test/CMakeFiles/test.dir/depend
 	$(MAKE) -f lib/msg_map/src/test/CMakeFiles/test.dir/build.make lib/msg_map/src/test/CMakeFiles/test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  20
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  30
 	@echo "Built target test"
 .PHONY : lib/msg_map/src/test/CMakeFiles/test.dir/all
 
@@ -256,7 +256,7 @@ lib/msg_map/src/core/preinstall:
 lib/msg_map/src/core/CMakeFiles/core.dir/all: lib/msg_map/src/util/CMakeFiles/util.dir/all
 	$(MAKE) -f lib/msg_map/src/core/CMakeFiles/core.dir/build.make lib/msg_map/src/core/CMakeFiles/core.dir/depend
 	$(MAKE) -f lib/msg_map/src/core/CMakeFiles/core.dir/build.make lib/msg_map/src/core/CMakeFiles/core.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  9 10 11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  19 20 21
 	@echo "Built target core"
 .PHONY : lib/msg_map/src/core/CMakeFiles/core.dir/all
 
@@ -306,7 +306,7 @@ lib/msg_map/src/util/preinstall:
 lib/msg_map/src/util/CMakeFiles/util.dir/all:
 	$(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/depend
 	$(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  21
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  31
 	@echo "Built target util"
 .PHONY : lib/msg_map/src/util/CMakeFiles/util.dir/all
 
@@ -356,7 +356,7 @@ lib/msg_map/src/custom/preinstall:
 lib/msg_map/src/custom/CMakeFiles/custom.dir/all:
 	$(MAKE) -f lib/msg_map/src/custom/CMakeFiles/custom.dir/build.make lib/msg_map/src/custom/CMakeFiles/custom.dir/depend
 	$(MAKE) -f lib/msg_map/src/custom/CMakeFiles/custom.dir/build.make lib/msg_map/src/custom/CMakeFiles/custom.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  12 13
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  22 23
 	@echo "Built target custom"
 .PHONY : lib/msg_map/src/custom/CMakeFiles/custom.dir/all
 
@@ -405,19 +405,22 @@ lib/vis/preinstall:
 # Convenience name for "all" pass in the directory.
 src/all: src/mrcimg/all
 src/all: src/resource/all
-src/all: src/imageshow/all
+src/all: src/XyzView/all
+src/all: src/ImageViewWindow/all
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
 src/clean: src/mrcimg/clean
 src/clean: src/resource/clean
-src/clean: src/imageshow/clean
+src/clean: src/XyzView/clean
+src/clean: src/ImageViewWindow/clean
 .PHONY : src/clean
 
 # Convenience name for "preinstall" pass in the directory.
 src/preinstall: src/mrcimg/preinstall
 src/preinstall: src/resource/preinstall
-src/preinstall: src/imageshow/preinstall
+src/preinstall: src/XyzView/preinstall
+src/preinstall: src/ImageViewWindow/preinstall
 .PHONY : src/preinstall
 
 #=============================================================================
@@ -442,7 +445,7 @@ src/mrcimg/preinstall:
 src/mrcimg/CMakeFiles/mrcimg.dir/all:
 	$(MAKE) -f src/mrcimg/CMakeFiles/mrcimg.dir/build.make src/mrcimg/CMakeFiles/mrcimg.dir/depend
 	$(MAKE) -f src/mrcimg/CMakeFiles/mrcimg.dir/build.make src/mrcimg/CMakeFiles/mrcimg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  14 15 16 17
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  24 25 26 27
 	@echo "Built target mrcimg"
 .PHONY : src/mrcimg/CMakeFiles/mrcimg.dir/all
 
@@ -492,7 +495,7 @@ src/resource/preinstall:
 src/resource/CMakeFiles/resource.dir/all:
 	$(MAKE) -f src/resource/CMakeFiles/resource.dir/build.make src/resource/CMakeFiles/resource.dir/depend
 	$(MAKE) -f src/resource/CMakeFiles/resource.dir/build.make src/resource/CMakeFiles/resource.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  18 19
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  28 29
 	@echo "Built target resource"
 .PHONY : src/resource/CMakeFiles/resource.dir/all
 
@@ -521,54 +524,104 @@ clean: src/resource/CMakeFiles/resource.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory src/imageshow
+# Directory level rules for directory src/XyzView
 
 # Convenience name for "all" pass in the directory.
-src/imageshow/all: src/imageshow/CMakeFiles/ImageShow.dir/all
-.PHONY : src/imageshow/all
+src/XyzView/all: src/XyzView/CMakeFiles/XyzView.dir/all
+.PHONY : src/XyzView/all
 
 # Convenience name for "clean" pass in the directory.
-src/imageshow/clean: src/imageshow/CMakeFiles/ImageShow.dir/clean
-.PHONY : src/imageshow/clean
+src/XyzView/clean: src/XyzView/CMakeFiles/XyzView.dir/clean
+.PHONY : src/XyzView/clean
 
 # Convenience name for "preinstall" pass in the directory.
-src/imageshow/preinstall:
-.PHONY : src/imageshow/preinstall
+src/XyzView/preinstall:
+.PHONY : src/XyzView/preinstall
 
 #=============================================================================
-# Target rules for target src/imageshow/CMakeFiles/ImageShow.dir
+# Target rules for target src/XyzView/CMakeFiles/XyzView.dir
 
 # All Build rule for target.
-src/imageshow/CMakeFiles/ImageShow.dir/all: src/mrcimg/CMakeFiles/mrcimg.dir/all
-src/imageshow/CMakeFiles/ImageShow.dir/all: src/resource/CMakeFiles/resource.dir/all
-	$(MAKE) -f src/imageshow/CMakeFiles/ImageShow.dir/build.make src/imageshow/CMakeFiles/ImageShow.dir/depend
-	$(MAKE) -f src/imageshow/CMakeFiles/ImageShow.dir/build.make src/imageshow/CMakeFiles/ImageShow.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  1 2 3 4
-	@echo "Built target ImageShow"
-.PHONY : src/imageshow/CMakeFiles/ImageShow.dir/all
+src/XyzView/CMakeFiles/XyzView.dir/all: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
+	$(MAKE) -f src/XyzView/CMakeFiles/XyzView.dir/build.make src/XyzView/CMakeFiles/XyzView.dir/depend
+	$(MAKE) -f src/XyzView/CMakeFiles/XyzView.dir/build.make src/XyzView/CMakeFiles/XyzView.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  9 10 11 12 13 14 15 16 17 18
+	@echo "Built target XyzView"
+.PHONY : src/XyzView/CMakeFiles/XyzView.dir/all
 
 # Include target in all.
-all: src/imageshow/CMakeFiles/ImageShow.dir/all
+all: src/XyzView/CMakeFiles/XyzView.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-src/imageshow/CMakeFiles/ImageShow.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 10
-	$(MAKE) -f CMakeFiles/Makefile2 src/imageshow/CMakeFiles/ImageShow.dir/all
+src/XyzView/CMakeFiles/XyzView.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 20
+	$(MAKE) -f CMakeFiles/Makefile2 src/XyzView/CMakeFiles/XyzView.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
-.PHONY : src/imageshow/CMakeFiles/ImageShow.dir/rule
+.PHONY : src/XyzView/CMakeFiles/XyzView.dir/rule
 
 # Convenience name for target.
-ImageShow: src/imageshow/CMakeFiles/ImageShow.dir/rule
-.PHONY : ImageShow
+XyzView: src/XyzView/CMakeFiles/XyzView.dir/rule
+.PHONY : XyzView
 
 # clean rule for target.
-src/imageshow/CMakeFiles/ImageShow.dir/clean:
-	$(MAKE) -f src/imageshow/CMakeFiles/ImageShow.dir/build.make src/imageshow/CMakeFiles/ImageShow.dir/clean
-.PHONY : src/imageshow/CMakeFiles/ImageShow.dir/clean
+src/XyzView/CMakeFiles/XyzView.dir/clean:
+	$(MAKE) -f src/XyzView/CMakeFiles/XyzView.dir/build.make src/XyzView/CMakeFiles/XyzView.dir/clean
+.PHONY : src/XyzView/CMakeFiles/XyzView.dir/clean
 
 # clean rule for target.
-clean: src/imageshow/CMakeFiles/ImageShow.dir/clean
+clean: src/XyzView/CMakeFiles/XyzView.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/ImageViewWindow
+
+# Convenience name for "all" pass in the directory.
+src/ImageViewWindow/all: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
+.PHONY : src/ImageViewWindow/all
+
+# Convenience name for "clean" pass in the directory.
+src/ImageViewWindow/clean: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean
+.PHONY : src/ImageViewWindow/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/ImageViewWindow/preinstall:
+.PHONY : src/ImageViewWindow/preinstall
+
+#=============================================================================
+# Target rules for target src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir
+
+# All Build rule for target.
+src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/resource/CMakeFiles/resource.dir/all
+src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/mrcimg/CMakeFiles/mrcimg.dir/all
+	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/depend
+	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  1 2 3 4
+	@echo "Built target ImageViewWindow"
+.PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
+
+# Include target in all.
+all: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+.PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/rule
+
+# Convenience name for target.
+ImageViewWindow: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/rule
+.PHONY : ImageViewWindow
+
+# clean rule for target.
+src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean:
+	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean
+.PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean
+
+# clean rule for target.
+clean: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean
 .PHONY : clean
 
 #=============================================================================

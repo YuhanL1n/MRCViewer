@@ -36,7 +36,8 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/Lin/projects/MRCViewer/build/src/mrcimg/cmake_install.cmake")
   INCLUDE("/home/Lin/projects/MRCViewer/build/src/resource/cmake_install.cmake")
-  INCLUDE("/home/Lin/projects/MRCViewer/build/src/imageshow/cmake_install.cmake")
+  INCLUDE("/home/Lin/projects/MRCViewer/build/src/XyzView/cmake_install.cmake")
+  INCLUDE("/home/Lin/projects/MRCViewer/build/src/ImageViewWindow/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

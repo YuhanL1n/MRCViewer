@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libImageViewWindow.a  CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o CMakeFiles/ImageViewWindow.dir/ImgInfo.o
+/usr/bin/ranlib ../../lib/libImageViewWindow.a

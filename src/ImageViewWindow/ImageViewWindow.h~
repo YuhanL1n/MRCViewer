@@ -1,0 +1,89 @@
+#ifndef ImageViewWindow_H
+#define ImageViewWindow_H
+
+#include <QtGui>
+#include "widget/CCanvas.h"
+#include "mrcimg/mrc2img.h"
+#include "widget/LoadImgWin.h"
+#include "dataf/dataf.h"
+#include "ImgInfo.h"
+#include "cv.h"
+using namespace cv;
+#define LEFT 0
+#define RIGHT 1 
+
+QPixmap fromIPlImage0(const IplImage* img);
+int BrightnessAdjust(const IplImage* srcImg,  
+                     IplImage* dstImg,  
+                     float brightness)  ;
+
+int ContrastAdjust(const IplImage* srcImg,  
+                   IplImage* dstImg,  
+                   float nPercent) ;
+
+class ImageViewWindow : public QMainWindow
+{
+Q_OBJECT
+private:
+  QPixmap m_image;
+  QPixmap* m_ViewImage;
+  CCanvas* m_ImageWidget;
+  QWidget* m_CentrolWidget;
+  QLineEdit* m_SizeLineEdit;
+  QLabel* m_ZLable;
+  QSlider* m_ZSlider;
+  QAction* m_EnlargeAction;
+  QAction* m_ShrinkAction;
+  QToolBar* m_EnlargeTool;
+  QToolBar* m_ShrinkTool;
+  QTimer* m_ViewTimer;
+  ImgInfo* m_imginfo;
+  
+  unsigned char** mData;
+  util::MrcStack m_ImageStack;
+  int m_nz , m_nx , m_ny;
+  int m_maxSize;
+  int m_cz;
+  
+  float m_size;
+  qreal m_Width;
+  qreal m_Heigh;
+  bool m_StartMove;
+  bool m_ContinueMove;
+  QPoint m_MousePoint;
+  bool m_IsDynamicView;
+  int m_Way;
+  
+private slots:
+  void EnlargeSlot();
+  void ShrinkSlot();
+  void MoveUp();
+  void MoveDown();
+  void MoveRight();
+  void MoveLeft();
+  void ChangeView(int i);
+  void DynamicView();
+  void On_Adjust();
+  
+protected:
+  bool eventFilter(QObject *object, QEvent *event); 
+  void keyPressEvent(QKeyEvent* k);
+  void resizeEvent(QResizeEvent* event);
+  void NextView(int i);
+  void DrawMark(IplImage* img, vector< util::feature > feats);
+  
+public:
+    ImageViewWindow(QWidget * parent = 0, Qt::WFlags f = 0);
+    virtual ~ImageViewWindow();
+public:
+    bool LoadImageWidget(QPixmap image);
+    bool UpdateImageWidget();
+    void CreateActions();
+    void CreateToolBars();
+    bool LoadImageStack(util::MrcStack* images);
+    bool LoadModeImage(util::MrcStack* images , util::FeatureStack* featsk , int r=4);
+    void SetImageName(QString str);
+    static ImageViewWindow *ViewMrc(QString filepath , QWidget *parent=0);
+};
+
+#endif // ImageViewWindow_H

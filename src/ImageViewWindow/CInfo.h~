@@ -1,0 +1,13 @@
+#ifndef CINFO_H
+#define CINFO_H
+
+#include <QtGui>
+
+class CInfo : public QMainWindow
+{
+public:
+  explicit CInfo(QWidget* parent = 0, Qt::WindowFlags flags = 0);
+  virtual ~CInfo();
+};
+
+#endif

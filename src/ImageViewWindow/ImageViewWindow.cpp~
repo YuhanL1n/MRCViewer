@@ -1,0 +1,760 @@
+#include "ImageViewWindow.h"
+
+#include <QtGui/QLabel>
+#include <QtGui/QMenu>
+#include <QtGui/QMenuBar>
+#include <QtGui/QAction>
+#include <iostream>
+#include "mrcimg/img_util.h"
+#include "math.h"
+#include "XyzView/func.h"
+
+QPixmap fromBuf(const uchar *buf , int width , int height)
+{
+   QImage* qimg;
+    QVector<QRgb> vcolorTable;
+        for(int i = 0; i < 256; i++){
+            vcolorTable.push_back(qRgb(i, i, i));
+        }
+        qimg = new QImage(buf, width, height, QImage::Format_Indexed8);
+        qimg->setColorTable(vcolorTable);
+    QPixmap tmp = QPixmap::fromImage(*qimg);
+    
+    delete qimg;
+    return tmp;
+}
+
+QPixmap fromIPlImage0(const IplImage* img)
+{
+    uchar *buf = NULL;
+
+    const int& widthStep = img->widthStep;
+    const int& height = img->height;
+    const int& width = img->width;
+    
+    switch(img->depth){
+    case IPL_DEPTH_8U:
+        if(img->nChannels == 1){
+            /* OpenCV image is stored with one byte grey pixel. We convert it to an 8 bit depth QImage.*/
+            buf = new uchar[width*height];
+            uchar* qdata = buf;
+            const uchar* src =(const uchar*)img->imageData;
+
+            for(int y = 0; y < height; y++){
+                memcpy(qdata, src, width);
+                qdata += width;
+                src += widthStep;
+            }
+
+        }
+        else if(img->nChannels == 3){
+            /* OpenCV image is stored with 3 byte color pixels(3 channels). We convert it to a 32 bit depth QImage.*/
+            buf = new uchar[width*height*4];
+            uchar* qdata = buf;
+            const uchar* src =(const uchar *) img->imageData;
+            for(int y = 0; y < height; y++){
+                for(int x = 0; x < width; x++){
+                    // We cannot help but copy manually.
+                    qdata[0] = src[0];
+                    qdata[1] = src[1];
+                    qdata[2] = src[2];
+                    qdata[3] = 0;
+
+                    qdata += 4;
+                    src += 3;
+                }
+                src += widthStep-3*width;
+            }
+
+        }
+        else{
+            qDebug("IplImageToQImage: image format is not supported : depth=8U and %d channels\n", img->nChannels);
+        }
+        break;
+    case IPL_DEPTH_16U:
+        if(img->nChannels == 1){
+            /* OpenCV image is stored with 2 bytes grey pixel. We convert it
+            to an 8 bit depth QImage.
+            */
+            buf = new uchar[width*height];
+            uchar *qdata = buf;
+            //const uint16_t *src =(const uint16_t *);
+            const unsigned int* src =(const unsigned int*)img->imageData;
+            for(int y = 0; y < height; y++){
+                for(int x = 0; x < width; x++){
+                    // We take only the highest part of the 16 bit value. It is
+                    //similar to dividing by 256.
+                    *qdata++ =((*src++) >> 8);
+                }
+                src += widthStep/sizeof(unsigned int)-width;
+            }
+        }
+        else{
+            qDebug("IplImageToQImage: image format is not supported : depth=16U and %d channels\n", img->nChannels);
+        }
+        break;
+    case IPL_DEPTH_32F:
+        if(img->nChannels == 1){
+            /* OpenCV image is stored with float(4 bytes) grey pixel. We
+            convert it to an 8 bit depth QImage.
+            */
+            buf = new uchar[width*height];
+            uchar *qdata = buf;
+            const float* src =(const float*) img->imageData;
+            for(int y = 0; y < height; y++){
+                for(int x = 0; x < width; x++){
+                    uchar p;
+                    float pf = 255*(*src++);
+                    if(pf < 0){ p = 0;}
+                    else if(pf > 255){ p = 255;}
+                    else{ p =(uchar) pf;}
+
+                    *qdata++ = p;
+                }
+                src += widthStep/sizeof(float)-width;
+            }
+        }
+        else{
+            qDebug("IplImageToQImage: image format is not supported : depth=32F and %d channels\n", img->nChannels);
+        }
+        break;
+    default:
+        qDebug("IplImageToQImage: image format is not supported : depth=%d and %d channels\n", img->depth, img->nChannels);
+    }
+    
+    QImage* qimg;
+    QVector<QRgb> vcolorTable;
+    if(img->nChannels == 1){
+        for(int i = 0; i < 256; i++){
+            vcolorTable.push_back(qRgb(i, i, i));
+        }
+        qimg = new QImage(buf, width, height, QImage::Format_Indexed8);
+        qimg->setColorTable(vcolorTable);
+    }
+    else{
+        qimg = new QImage(buf, width, height, QImage::Format_RGB32);
+    }
+    QPixmap tmp = QPixmap::fromImage(*qimg);
+    
+    delete qimg;
+    delete [] buf;
+    return tmp;
+}
+
+int BrightnessAdjust(const IplImage* srcImg,  
+                     IplImage* dstImg,  
+                     float brightness)  
+{  
+    assert(srcImg != NULL);  
+    assert(dstImg != NULL);  
+   
+    int x,y,i;  
+    float val;  
+        for (y = 0; y < srcImg->height; y++)  
+        {  
+            for (x = 0; x < srcImg->width; x++)  
+            {  
+   
+                val = ((uchar*)(srcImg->imageData + srcImg->widthStep*y))[x+i];  
+                val += brightness;  
+                //对灰度值的可能溢出进行处理  
+                if(val>255)    val=255;  
+                if(val<0) val=0;  
+                ((uchar*)(dstImg->imageData + dstImg->widthStep*y))[x+i] = (uchar)val;  
+            }  
+        }  
+   
+    return 0;  
+}  
+   
+int ContrastAdjust(const IplImage* srcImg,  
+                   IplImage* dstImg,  
+                   float nPercent)  
+{  
+    assert(srcImg != NULL);  
+    assert(dstImg != NULL);  
+   
+    int x,y,i;  
+    float val;  
+        for (y = 0; y < srcImg->height; y++)  
+        {  
+            for (x = 0; x < srcImg->width; x++)  
+            {  
+   
+                val = ((uchar*)(srcImg->imageData + srcImg->widthStep*y))[x+i];  
+                val = 128 + (val - 128) * nPercent;  
+                //对灰度值的可能溢出进行处理  
+                if(val>255) val=255;  
+                if(val<0) val=0;  
+                ((uchar*)(dstImg->imageData + dstImg->widthStep*y))[x+i] = (uchar)val;  
+            }  
+        }  
+   
+    return 0;  
+}  
+
+
+
+ImageViewWindow::ImageViewWindow(QWidget * parent, Qt::WFlags f)
+: QMainWindow(parent, f)
+{
+    m_maxSize = 700;
+    m_size=1;
+    grabKeyboard();
+    CreateActions();
+    CreateToolBars();
+    m_CentrolWidget=new QWidget(this);
+    m_ImageWidget = new CCanvas(m_CentrolWidget);
+     m_StartMove = false;
+     m_ContinueMove = false;
+     m_CentrolWidget->installEventFilter(this);
+     this->setCentralWidget(m_CentrolWidget);
+     m_IsDynamicView = false;
+     m_Way = LEFT ;
+     m_ViewTimer = new QTimer(this);
+     m_ViewImage = new QPixmap;
+     
+     m_imginfo = new ImgInfo(this);
+     m_imginfo->setAttribute(Qt::WA_DeleteOnClose);
+  
+    int  cx = (QApplication::desktop()->width() - width()) / 2;  
+    int cy = (QApplication::desktop()->height() - height()) / 2;  
+    move(cx,cy);
+    connect(m_ZSlider , SIGNAL(sliderMoved(int)) , m_ZLable , SLOT(setNum(int)));
+    connect(m_ZSlider , SIGNAL(sliderMoved(int)) , this , SLOT(ChangeView(int)));
+    connect(m_ViewTimer , SIGNAL(timeout()) , this , SLOT(DynamicView()));
+    connect(m_imginfo , SIGNAL(destroyed(QObject*)) , this , SLOT(close()));
+    connect(m_imginfo , SIGNAL(Adjust()) , this , SLOT(On_Adjust()));
+    
+    //qDebug()<<"ImageViewWindow() end";
+}
+
+ImageViewWindow::~ImageViewWindow()
+{
+  qDebug()<<"~ImageViewWindow";
+  if(m_ViewImage){
+    delete m_ViewImage;
+  }
+  if(m_SizeLineEdit){
+    delete m_SizeLineEdit;
+  }
+  if(m_ZLable){
+    delete m_ZLable;
+  }
+  if(m_ZSlider){
+    delete m_ZSlider;
+  }
+  for(int i = 0;i<m_nz ; i++)
+    delete []  mData[i];
+  delete [] mData;
+}
+
+bool ImageViewWindow::LoadImageWidget(QPixmap Image)
+{
+  m_image=Image;
+  m_Width = Image.width();
+  m_Heigh = Image.height();
+  m_ImageWidget->UpdateImageData(&m_image);
+  m_CentrolWidget-> resize(m_ImageWidget->width(),m_ImageWidget->height());
+   m_SizeLineEdit->setText(QString::number(m_size));
+   return true;
+}
+
+bool ImageViewWindow::UpdateImageWidget()
+{
+   // QPixmap image0 = image;
+    m_ImageWidget->UpdateImageData(m_ViewImage);
+}
+
+
+void ImageViewWindow::CreateActions()
+{
+  m_EnlargeAction = new QAction(QIcon(":/images/zoomin.png"),tr("放大"),this);
+  connect(m_EnlargeAction,SIGNAL(triggered()) , this , SLOT(EnlargeSlot()));
+  
+  m_ShrinkAction = new QAction(QIcon(":/images/zoomout.png") , tr("缩小") , this);
+  connect(m_ShrinkAction , SIGNAL(triggered()) , this , SLOT(ShrinkSlot()));
+}
+
+void ImageViewWindow::CreateToolBars()
+{
+  m_EnlargeTool = addToolBar("放大");
+  m_EnlargeTool->addAction(m_EnlargeAction);
+  m_EnlargeTool->setMovable(false);
+  
+  m_ShrinkTool = addToolBar("缩小");
+  m_ShrinkTool->addAction(m_ShrinkAction);
+  m_ShrinkTool->setMovable(false);
+  
+  m_SizeLineEdit = new QLineEdit;
+  m_SizeLineEdit->setReadOnly(true);
+  m_SizeLineEdit->setMaximumWidth(70);
+  m_ShrinkTool->addWidget(m_SizeLineEdit);
+  
+  m_ZLable = new QLabel(tr("  z"));
+  QFont ft;
+  ft.setPointSize(18);
+  m_ZLable->setFont(ft);
+  m_ShrinkTool->addWidget(m_ZLable);
+  
+  m_ZSlider = new QSlider(Qt::Horizontal);
+  m_ZSlider->setMaximumWidth(200);
+  m_ShrinkTool->addWidget(m_ZSlider);
+  
+  m_ZLable = new QLabel;
+  m_ZLable->setMaximumWidth(100);
+  m_ShrinkTool->addWidget(m_ZLable);
+}
+
+
+//-------------------------slot---------------------------------
+void ImageViewWindow::EnlargeSlot()
+{
+  //放大pixmap，并且更新放大倍数编辑框
+  if(m_size < 0.5)
+    m_size *= 1.5;
+  else  m_size+=0.5;
+  int width = m_ViewImage->width();
+  int height = m_ViewImage->height();
+  
+  *m_ViewImage = m_image.scaled(m_Width*m_size,m_Heigh*m_size,Qt::KeepAspectRatio);
+ UpdateImageWidget();
+ int offset_x = - (m_ImageWidget->width() - width)/2;
+ int offset_y = - (m_ImageWidget->height() - height)/2;
+ qDebug("width = %d , height = %d\n", width,height);
+ qDebug("offset_x = %d , offset_y = %d\n",offset_x,offset_y);
+ qDebug("x = %d , y = %d\n",m_ImageWidget->x(),m_ImageWidget->y());
+  m_ImageWidget->move(offset_x+m_ImageWidget->x(),offset_y+m_ImageWidget->y());
+ m_SizeLineEdit->setText(QString::number(m_size));
+}
+ 
+void ImageViewWindow::ShrinkSlot()
+{
+  if(m_size >= 1)
+  m_size-=0.5;
+  else m_size /= 1.5;
+  int width = m_ViewImage->width();
+  int height = m_ViewImage->height();
+  *m_ViewImage =  m_image.scaled(m_Width*m_size,m_Heigh*m_size,Qt::KeepAspectRatio);
+  UpdateImageWidget();
+   int offset_x = - (m_ImageWidget->width() - width)/2;
+   int offset_y = - (m_ImageWidget->height() - height)/2;
+   qDebug("width = %d , height = %d\n", width,height);
+   qDebug("width1 = %d , height1 = %d\n",m_ImageWidget->width(),m_ImageWidget->height());
+   qDebug("offset_x = %d , offset_y = %d\n",offset_x,offset_y);
+   qDebug("x = %d , y = %d\n",m_ImageWidget->x(),m_ImageWidget->y());
+    m_ImageWidget->move(offset_x+m_ImageWidget->x(),offset_y+m_ImageWidget->y());
+ 
+   m_SizeLineEdit->setText(QString::number(m_size));
+}
+
+void ImageViewWindow::ChangeView(int i)
+{
+  m_cz = i-1;
+  unsigned char* sdata;
+  if(m_imginfo->m_isChanged){
+    sdata = new unsigned char[m_nx*m_ny];
+    BrightContractAdjust(mData[m_cz] , sdata , m_nx*m_ny , m_imginfo->m_Brightness , m_imginfo->m_Contract);
+  }
+  else{
+   sdata = mData[m_cz];
+  }
+  m_image = fromBuf(sdata , m_nx , m_ny);
+//     if(sdata)
+//     delete [] sdata;
+    m_Width = m_image.width();
+    m_Heigh = m_image.height();
+    *m_ViewImage = m_image.scaled(m_Width*m_size,m_Heigh*m_size,Qt::KeepAspectRatio);
+ UpdateImageWidget();
+    
+    if(this->width() > m_ImageWidget->width() &&  m_CentrolWidget->height() > m_ImageWidget->height()){
+    m_ImageWidget->move((m_CentrolWidget->width() - m_ImageWidget->width())/2 , (m_CentrolWidget->height() - m_ImageWidget->height())/2);
+  }
+   if(m_imginfo->m_isChanged)
+   delete [] sdata;
+    
+}
+
+void ImageViewWindow::DynamicView()
+{
+//     qDebug("Timer\n");
+    int z = m_cz;
+//     qDebug("z=%d\n",z);
+    if(m_Way == LEFT){
+	if(z==0){
+	    m_Way = RIGHT;
+	    NextView(1);
+	}
+	else{
+	    NextView(z-1);
+	}
+    }
+    else{
+	if(z == m_nz - 1){
+	    m_Way = LEFT;
+	    NextView(z-1);
+	}
+	else{
+	    NextView(z+1);
+	}
+    }
+}
+
+
+bool ImageViewWindow::eventFilter(QObject* object, QEvent* event)
+{
+  if(object == m_CentrolWidget){
+    if(event->type() == QEvent::MouseMove){
+      QMouseEvent *me = (QMouseEvent*) event;
+      if(!m_StartMove){
+	m_StartMove = true;
+	m_ContinueMove = false;
+	m_MousePoint = me->globalPos();
+      }
+      else{
+	QPoint p = me->globalPos();
+	int Offset_X = p.x() - m_MousePoint.x();
+	int Offset_Y = p.y() - m_MousePoint.y();
+	m_ContinueMove = true;
+	m_ImageWidget->move(Offset_X+m_ImageWidget->x(),Offset_Y+m_ImageWidget->y());
+	m_MousePoint = p;
+	return true;
+      }
+    }
+    else if(event->type() == QEvent::MouseButtonRelease){
+      if(m_StartMove)
+	m_StartMove = false;
+    }
+    else if(event->type() == QEvent::MouseButtonPress){
+      QMouseEvent *me = (QMouseEvent*) event;
+      if(me->button() == Qt::MidButton){//鼠标中键事件代码
+	if(m_nz>1){
+	  if(m_IsDynamicView)
+	  {
+	      m_IsDynamicView = false;
+	      m_ViewTimer->stop();
+	  }
+	  else{
+	      m_IsDynamicView = true;
+	      m_Way = LEFT;
+	      m_ViewTimer->start(50);
+	  }
+	}
+      }
+    }
+  }
+    return QObject::eventFilter(object, event);
+}
+
+
+void ImageViewWindow::keyPressEvent(QKeyEvent* k)
+{
+    if(k->key() == Qt::Key_Up){
+	MoveUp();
+      }
+      else if(k->key() == Qt::Key_Left){
+	MoveLeft();
+      }
+      else if(k->key() == Qt::Key_Right){
+	MoveRight();
+      }
+      else if(k->key() == Qt::Key_Down){
+	MoveDown();
+      }
+    QWidget::keyPressEvent(k);
+}
+
+void ImageViewWindow::MoveDown()
+{
+  int Offset_X = 0;
+	int Offset_Y = 5;
+	m_ImageWidget->move(Offset_X+m_ImageWidget->x(),Offset_Y+m_ImageWidget->y());
+}
+
+void ImageViewWindow::MoveLeft()
+{
+  int Offset_X = -5;
+	int Offset_Y = 0;
+	m_ImageWidget->move(Offset_X+m_ImageWidget->x(),Offset_Y+m_ImageWidget->y());
+}
+
+void ImageViewWindow::MoveRight()
+{
+  int Offset_X = 5;
+	int Offset_Y = 0;
+	m_ImageWidget->move(Offset_X+m_ImageWidget->x(),Offset_Y+m_ImageWidget->y());
+}
+
+void ImageViewWindow::MoveUp()
+{
+  int Offset_X = 0;
+	int Offset_Y = -5;
+	m_ImageWidget->move(Offset_X+m_ImageWidget->x(),Offset_Y+m_ImageWidget->y());
+}
+
+void ImageViewWindow::resizeEvent(QResizeEvent* event)
+{
+  if(this->width() > m_ImageWidget->width() &&  m_CentrolWidget->height() > m_ImageWidget->height()){
+    m_ImageWidget->move((width() - m_ImageWidget->width())/2 , (height() - m_ImageWidget->height() -40)/2);
+  }
+    QWidget::resizeEvent(event);
+}
+
+bool ImageViewWindow::LoadImageStack(util::MrcStack* images)
+{
+  m_nz = images->Size();
+  m_nx = images->Width();
+  m_ny = images->Height();
+//   m_Images = new QPixmap[m_nz];
+  IplImage* iplimage;
+  
+  //processbar
+  LoadImgWin LoadImgBar;
+  LoadImgBar.show();
+  LoadImgBar.SetRange(0 , m_nz);
+  QString s = QString("0/%1").arg(m_nz);
+//   qDebug()<<"s = "<<s;
+  LoadImgBar.SetLabel(QString("0/%1").arg(m_nz));
+  
+   mData = new unsigned char*[m_nz];
+  for(int i=0;i<m_nz;i++){
+
+    LoadImgBar.SetValue(i);
+    LoadImgBar.SetLabel(QString("%1/%2").arg(i).arg(m_nz));
+    
+   iplimage = images->GetIplImage(i);
+   
+   IplImage* cpy;
+  util::CopyToUChar256(iplimage, &cpy, 255, 0);
+//   qDebug()<<"GetDataFromIplimage";
+   GetDataFromIplimage(cpy , &mData[i]);
+//    qDebug()<<"GetDataFromIplimage";
+   cvReleaseImage(&cpy);
+   cvReleaseImage(&iplimage);
+}
+  m_ZSlider->setRange(1,m_nz);
+  m_ZSlider->setValue(m_nz / 2);
+  m_ZLable->setNum(m_nz / 2);
+  m_cz = (m_nz-1) / 2;
+  qDebug()<<"fromBuf";
+  m_image = fromBuf(mData[m_cz] , m_nx , m_ny);
+  
+  QSize size;
+  size = m_image.size();
+  if(size.width()>m_maxSize || size.height()>m_maxSize){
+    float s;
+    if(size.width()>size.height()){
+      s = size.width();
+    } 
+    else{
+      s = size.height();
+    }
+    m_size = m_maxSize/s;
+  }
+  
+  m_Width = m_image.width();
+  m_Heigh = m_image.height();  
+   
+    *m_ViewImage = m_image.scaled(m_Width*m_size,m_Heigh*m_size,Qt::KeepAspectRatio);
+    m_ImageWidget->UpdateImageData(m_ViewImage);
+    
+    m_CentrolWidget-> resize(m_ImageWidget->width(),m_ImageWidget->height());
+    this->resize(m_ImageWidget->width(),m_ImageWidget->height()+40);
+    m_SizeLineEdit->setText(QString::number(m_size));
+    
+    LoadImgBar.close();
+    
+    QString info = QString("Image size : %1*%2\n").arg(m_Width).arg(m_Heigh);
+    m_imginfo->AddInfo(info);
+    info = QString("Sections : %1\n").arg(m_nz);
+    m_imginfo->AddInfo(info);
+    m_imginfo->show();
+   return true;
+
+}
+
+void ImageViewWindow::NextView(int i)
+{
+  m_cz = i;
+  //qDebug()<<"view"<<i;
+    unsigned char* sdata;
+  if(m_imginfo->m_isChanged){
+    sdata = new unsigned char[m_nx*m_ny];
+    BrightContractAdjust(mData[m_cz] , sdata , m_nx*m_ny , m_imginfo->m_Brightness , m_imginfo->m_Contract);
+  }
+  else{
+   sdata = mData[m_cz];
+  }
+  m_image = fromBuf(sdata , m_nx , m_ny);
+//     if(sdata)
+//     delete [] sdata;
+    m_Width = m_image.width();
+    m_Heigh = m_image.height();
+   *m_ViewImage = m_image.scaled(m_Width*m_size,m_Heigh*m_size,Qt::KeepAspectRatio);
+ UpdateImageWidget();
+    m_ZSlider->setValue(i+1);
+    m_ZLable->setNum(i+1);
+    
+     if(m_imginfo->m_isChanged)
+   delete [] sdata;
+}
+
+// void ImageViewWindow::On_Adjusted()
+// {
+//   qDebug()<<"adjust";
+//   
+// }
+
+void ImageViewWindow::On_Adjust()
+{
+  unsigned char* sdata;
+  if(m_imginfo->m_isChanged){
+    sdata = new unsigned char[m_nx*m_ny];
+    BrightContractAdjust(mData[m_cz] , sdata , m_nx*m_ny , m_imginfo->m_Brightness , m_imginfo->m_Contract);
+    
+  }
+  else{
+   sdata = mData[m_cz];
+  }
+  m_image = fromBuf(sdata , m_nx , m_ny);
+  m_Width = m_image.width();
+    m_Heigh = m_image.height();
+   *m_ViewImage = m_image.scaled(m_Width*m_size,m_Heigh*m_size,Qt::KeepAspectRatio);
+ UpdateImageWidget();
+ if(m_imginfo->m_isChanged)
+   delete [] sdata;
+}
+
+void ImageViewWindow::SetImageName(QString str)
+{
+  setWindowTitle(str);
+  m_imginfo->setWindowTitle(str);
+}
+
+ImageViewWindow* ImageViewWindow::ViewMrc(QString filepath, QWidget* parent)
+{
+    qDebug()<<"ViewMrc";
+    util::MrcStack* images = new util::MrcStack;
+    if(images->Open(filepath.toLatin1().data()))
+    {
+    
+      ImageViewWindow *win = new ImageViewWindow(parent);
+      win->setAttribute(Qt::WA_DeleteOnClose);
+    
+      win->LoadImageStack(images);
+      QFileInfo file(filepath);
+      win->SetImageName(file.fileName());
+//     win->Test();
+    
+      win->show();
+      delete images;
+    }
+    else{
+      delete images;
+      QMessageBox::warning(NULL , tr("open image") , tr("Can't open image file!")  ,QMessageBox::Ok);
+    }
+}
+
+//add
+bool ImageViewWindow::LoadModeImage(util::MrcStack* images, util::FeatureStack* featsk , int r)
+{
+    
+    m_nz = images->Size();
+  m_nx = images->Width();
+  m_ny = images->Height();
+//   m_Images = new QPixmap[m_nz];
+  IplImage* iplimage;
+  
+  //processbar
+  LoadImgWin LoadImgBar;
+  LoadImgBar.show();
+  LoadImgBar.SetRange(0 , m_nz);
+  QString s = QString("0/%1").arg(m_nz);
+//   qDebug()<<"s = "<<s;
+  LoadImgBar.SetLabel(QString("0/%1").arg(m_nz));
+  
+   mData = new unsigned char*[m_nz];
+   
+   
+   
+  for(int i=0;i<m_nz;i++){
+
+    std::vector<util::feature>& features = featsk->V(i);
+    LoadImgBar.SetValue(i);
+    LoadImgBar.SetLabel(QString("%1/%2").arg(i).arg(m_nz));
+    
+   iplimage = images->GetIplImage(i);
+   
+   IplImage* cpy;
+  util::CopyToUChar256(iplimage, &cpy, 255, 0);
+  DrawMark(cpy , features , r);
+//   qDebug()<<"GetDataFromIplimage";
+   GetDataFromIplimage(cpy , &mData[i]);
+//    qDebug()<<"GetDataFromIplimage";
+   cvReleaseImage(&cpy);
+   cvReleaseImage(&iplimage);
+}
+  m_ZSlider->setRange(1,m_nz);
+  m_ZSlider->setValue(m_nz / 2);
+  m_ZLable->setNum(m_nz / 2);
+  m_cz = (m_nz-1) / 2;
+  qDebug()<<"fromBuf";
+  m_image = fromBuf(mData[m_cz] , m_nx , m_ny);
+  
+  QSize size;
+  size = m_image.size();
+  if(size.width()>m_maxSize || size.height()>m_maxSize){
+    float s;
+    if(size.width()>size.height()){
+      s = size.width();
+    } 
+    else{
+      s = size.height();
+    }
+    m_size = m_maxSize/s;
+  }
+  
+  m_Width = m_image.width();
+  m_Heigh = m_image.height();  
+   
+    *m_ViewImage = m_image.scaled(m_Width*m_size,m_Heigh*m_size,Qt::KeepAspectRatio);
+    m_ImageWidget->UpdateImageData(m_ViewImage);
+    
+    m_CentrolWidget-> resize(m_ImageWidget->width(),m_ImageWidget->height());
+    this->resize(m_ImageWidget->width(),m_ImageWidget->height()+40);
+    m_SizeLineEdit->setText(QString::number(m_size));
+    
+    LoadImgBar.close();
+    
+    QString info = QString("Image size : %1*%2\n").arg(m_Width).arg(m_Heigh);
+    m_imginfo->AddInfo(info);
+    info = QString("Sections : %1\n").arg(m_nz);
+    m_imginfo->AddInfo(info);
+    m_imginfo->show();
+   return true;
+}
+
+void ImageViewWindow::DrawMark(IplImage* img, vector< util::feature > feats)
+{
+  for(int i=0 ; i < feats.size() ; i++){
+      CvScalar color = CV_RGB(255, 255, 0);
+      float x = feats[i].kpt.x;
+      float y = feats[i].kpt.y;
+      int x0 = (int)x;
+      int y0 = (int)y;
+      float d;
+      d = x - x0;
+      if(d>=0.5) x0++;
+      d = y - y0;
+      if(d>=0.5) y0++;
+      cvCircle(img , cvPoint(x0, y0) , 12 , color , 2 , 8);
+  }
+}
+
+
+#include "ImageViewWindow.moc"
+
+
+
+
+

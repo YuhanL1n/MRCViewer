@@ -1,0 +1,10 @@
+#ifdef IMG_INF_H
+#define IMG_INF_H
+
+#include <QtGui>
+#include <qmainwindow.h>
+
+class Img_Inf : public QMainWindow
+{
+};
+#endif

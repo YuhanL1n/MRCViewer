@@ -165,6 +165,9 @@ EXECUTABLE_OUTPUT_PATH:PATH=
 //Dependencies for the target
 ImageShow_LIB_DEPENDS:STATIC=optimized;/usr/lib64/libQtCore.so;debug;/usr/lib64/libQtCore_debug.so;optimized;/usr/lib64/libQtGui.so;debug;/usr/lib64/libQtGui_debug.so;optimized;/usr/lib64/libQtOpenGL.so;debug;/usr/lib64/libQtOpenGL_debug.so;optimized;/usr/lib64/libQtGui.so;debug;/usr/lib64/libQtGui_debug.so;optimized;/usr/lib64/libQtCore.so;debug;/usr/lib64/libQtCore_debug.so;general;/usr/lib64/libGLU.so;general;/usr/lib64/libGL.so;general;/usr/lib64/libSM.so;general;/usr/lib64/libICE.so;general;/usr/lib64/libX11.so;general;/usr/lib64/libXext.so;general;/usr/lib64/libGL.so;general;/usr/lib64/libGLU.so;general;opencv_core;general;opencv_imgproc;general;opencv_calib3d;general;opencv_video;general;opencv_features2d;general;opencv_ml;general;opencv_highgui;general;opencv_objdetect;general;opencv_contrib;general;opencv_legacy;general;widget;general;resource;general;mrcimg;
 
+//Dependencies for the target
+ImageViewWindow_LIB_DEPENDS:STATIC=optimized;/usr/lib64/libQtCore.so;debug;/usr/lib64/libQtCore_debug.so;optimized;/usr/lib64/libQtGui.so;debug;/usr/lib64/libQtGui_debug.so;general;opencv_core;general;opencv_imgproc;general;opencv_calib3d;general;opencv_video;general;opencv_features2d;general;opencv_ml;general;opencv_highgui;general;opencv_objdetect;general;opencv_contrib;general;opencv_legacy;general;widget;general;resource;general;XyzView;
+
 //Single output directory for building all libraries.
 LIBRARY_OUTPUT_PATH:PATH=
 
@@ -970,6 +973,9 @@ X11_xf86misc_INCLUDE_PATH:PATH=/usr/include
 X11_xf86vmode_INCLUDE_PATH:PATH=/usr/include
 
 //Dependencies for the target
+XyzView_LIB_DEPENDS:STATIC=optimized;/usr/lib64/libQtCore.so;debug;/usr/lib64/libQtCore_debug.so;optimized;/usr/lib64/libQtGui.so;debug;/usr/lib64/libQtGui_debug.so;optimized;/usr/lib64/libQtOpenGL.so;debug;/usr/lib64/libQtOpenGL_debug.so;optimized;/usr/lib64/libQtGui.so;debug;/usr/lib64/libQtGui_debug.so;optimized;/usr/lib64/libQtCore.so;debug;/usr/lib64/libQtCore_debug.so;general;/usr/lib64/libGLU.so;general;/usr/lib64/libGL.so;general;/usr/lib64/libSM.so;general;/usr/lib64/libICE.so;general;/usr/lib64/libX11.so;general;/usr/lib64/libXext.so;general;/usr/lib64/libGL.so;general;/usr/lib64/libGLU.so;general;opencv_core;general;opencv_imgproc;general;opencv_calib3d;general;opencv_video;general;opencv_features2d;general;opencv_ml;general;opencv_highgui;general;opencv_objdetect;general;opencv_contrib;general;opencv_legacy;general;widget;general;resource;general;mrcimg;general;ImageViewWindow;
+
+//Dependencies for the target
 core_LIB_DEPENDS:STATIC=general;util;general;pthread;
 
 //Dependencies for the target
@@ -1091,7 +1097,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=15
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=16
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

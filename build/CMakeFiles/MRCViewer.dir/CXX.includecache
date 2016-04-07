@@ -716,6 +716,40 @@ img_util.h
 
 ../src/mrcimg/mrcheader.h
 
+/home/Lin/projects/MRCViewer/MRCViewer.cpp
+MRCViewer.h
+/home/Lin/projects/MRCViewer/MRCViewer.h
+
+/home/Lin/projects/MRCViewer/MRCViewer.h
+QtGui
+-
+QtGui/QMainWindow
+-
+QtGui/QLabel
+-
+QtGui/QMenu
+-
+QtGui/QMenuBar
+-
+QtGui/QAction
+-
+QtGui/QDialog
+-
+QtGui/QApplication
+-
+QtCore/QByteArray
+-
+QFile
+-
+QFileInfo
+-
+QString
+-
+QtCore/qcoreapplication.h
+-
+mrcimg/mrc2img.h
+-
+
 /home/Lin/projects/MRCViewer/build/../MRCViewer.h
 QtGui
 -
@@ -749,6 +783,12 @@ mrcimg/mrc2img.h
 /home/Lin/projects/MRCViewer/build/moc_MRCViewer.cxx
 ../MRCViewer.h
 /home/Lin/projects/MRCViewer/build/../MRCViewer.h
+
+/home/Lin/projects/MRCViewer/main.cpp
+QtGui/QApplication
+-
+MRCViewer.h
+/home/Lin/projects/MRCViewer/MRCViewer.h
 
 /usr/include/QtCore/QFile
 qfile.h

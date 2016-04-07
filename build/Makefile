@@ -190,17 +190,30 @@ resource/fast:
 .PHONY : resource/fast
 
 #=============================================================================
-# Target rules for targets named ImageShow
+# Target rules for targets named XyzView
 
 # Build rule for target.
-ImageShow: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ImageShow
-.PHONY : ImageShow
+XyzView: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 XyzView
+.PHONY : XyzView
 
 # fast build rule for target.
-ImageShow/fast:
-	$(MAKE) -f src/imageshow/CMakeFiles/ImageShow.dir/build.make src/imageshow/CMakeFiles/ImageShow.dir/build
-.PHONY : ImageShow/fast
+XyzView/fast:
+	$(MAKE) -f src/XyzView/CMakeFiles/XyzView.dir/build.make src/XyzView/CMakeFiles/XyzView.dir/build
+.PHONY : XyzView/fast
+
+#=============================================================================
+# Target rules for targets named ImageViewWindow
+
+# Build rule for target.
+ImageViewWindow: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ImageViewWindow
+.PHONY : ImageViewWindow
+
+# fast build rule for target.
+ImageViewWindow/fast:
+	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build
+.PHONY : ImageViewWindow/fast
 
 # target to build an object file
 MRCViewer.o:
@@ -262,7 +275,8 @@ help:
 	@echo "... custom"
 	@echo "... mrcimg"
 	@echo "... resource"
-	@echo "... ImageShow"
+	@echo "... XyzView"
+	@echo "... ImageViewWindow"
 	@echo "... MRCViewer.o"
 	@echo "... MRCViewer.i"
 	@echo "... MRCViewer.s"

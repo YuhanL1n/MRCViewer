@@ -22,7 +22,8 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "../lib/opencv_2.3.1/CMakeLists.txt"
   "../lib/vis/CMakeLists.txt"
   "../src/CMakeLists.txt"
-  "../src/imageshow/CMakeLists.txt"
+  "../src/ImageViewWindow/CMakeLists.txt"
+  "../src/XyzView/CMakeLists.txt"
   "../src/mrcimg/CMakeLists.txt"
   "../src/resource/CMakeLists.txt"
   "../src/resource/resource.qrc"
@@ -77,7 +78,8 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/mrcimg/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/resource/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/imageshow/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/XyzView/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/ImageViewWindow/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -89,5 +91,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "lib/msg_map/src/custom/CMakeFiles/custom.dir/DependInfo.cmake"
   "src/mrcimg/CMakeFiles/mrcimg.dir/DependInfo.cmake"
   "src/resource/CMakeFiles/resource.dir/DependInfo.cmake"
-  "src/imageshow/CMakeFiles/ImageShow.dir/DependInfo.cmake"
+  "src/XyzView/CMakeFiles/XyzView.dir/DependInfo.cmake"
+  "src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/DependInfo.cmake"
   )

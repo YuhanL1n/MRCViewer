@@ -1,5 +1,6 @@
-/home/Lin/projects/MRCViewer/build/src/imageshow/CMakeFiles/ImageShow.dir
+/home/Lin/projects/MRCViewer/build/src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir
 /home/Lin/projects/MRCViewer/build/CMakeFiles/MRCViewer.dir
+/home/Lin/projects/MRCViewer/build/src/XyzView/CMakeFiles/XyzView.dir
 /home/Lin/projects/MRCViewer/build/lib/msg_map/src/core/CMakeFiles/core.dir
 /home/Lin/projects/MRCViewer/build/lib/msg_map/src/custom/CMakeFiles/custom.dir
 /home/Lin/projects/MRCViewer/build/src/mrcimg/CMakeFiles/mrcimg.dir

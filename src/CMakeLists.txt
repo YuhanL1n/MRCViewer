@@ -1,3 +1,4 @@
 add_subdirectory(mrcimg)
 add_subdirectory(resource)
-add_subdirectory(imageshow)
+add_subdirectory(XyzView)
+add_subdirectory(ImageViewWindow/)

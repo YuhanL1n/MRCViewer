@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libXyzView.a  CMakeFiles/XyzView.dir/XyzWindow.o CMakeFiles/XyzView.dir/XyzGL.o CMakeFiles/XyzView.dir/b3dgfx.o CMakeFiles/XyzView.dir/func.o CMakeFiles/XyzView.dir/moc_XyzGL.o CMakeFiles/XyzView.dir/moc_XyzWindow.o
+/usr/bin/ranlib ../../lib/libXyzView.a
