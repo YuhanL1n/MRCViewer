@@ -1,0 +1,3 @@
+add_subdirectory(mrcimg)
+add_subdirectory(resource)
+add_subdirectory(imageshow)

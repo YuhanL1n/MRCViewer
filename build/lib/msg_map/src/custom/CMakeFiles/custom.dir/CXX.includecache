@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/msg_map/src/core/msg.h
+vector
+-
+
+/home/Lin/projects/MRCViewer/lib/msg_map/src/custom/custom.cpp
+custom.h
+/home/Lin/projects/MRCViewer/lib/msg_map/src/custom/custom.h
+QTimer
+-
+iostream
+-
+custom.moc
+/home/Lin/projects/MRCViewer/lib/msg_map/src/custom/custom.moc
+
+/home/Lin/projects/MRCViewer/lib/msg_map/src/custom/custom.h
+QtCore/QObject
+-
+QtCore/QEvent
+-
+QtCore/QCoreApplication
+-
+core/msg.h
+/home/Lin/projects/MRCViewer/lib/msg_map/src/custom/core/msg.h
+
+/usr/include/QtCore/QTimer
+qtimer.h
+/usr/include/QtCore/qtimer.h
+
+/usr/include/QtCore/qtimer.h
+QtCore/qbasictimer.h
+-
+QtCore/qobject.h
+-
+
+lib/msg_map/src/custom/custom.moc
+

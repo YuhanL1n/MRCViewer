@@ -1,0 +1,14 @@
+
+#set(KEYMATCH_SRCS match_core.cpp)
+aux_source_directory(. MRC_IMG_SRCS)
+
+MESSAGE(STATUS "building mrcimg")
+
+find_package(OpenCV REQUIRED)
+
+add_library (mrcimg STATIC ${MRC_IMG_SRCS})
+
+target_link_libraries(mrcimg ${OpenCV_LIBS})
+
+set_target_properties(mrcimg PROPERTIES OUTPUT_NAME "mrcimg")
+set_target_properties(mrcimg PROPERTIES CLEAN_DIRECT_OUTPUT 1)

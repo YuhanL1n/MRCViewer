@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/test.dir/main.cpp.o  -o ../../bin/test  -L/home/Lin/projects/MRCViewer/build/lib  -L/home/Lin/projects/MRCViewer/build/lib/msg_map/lib -rdynamic ../../lib/libcore.a ../../lib/libcustom.a ../../lib/libutil.a -lpthread -lQtCore_debug -lQtGui_debug -Wl,-rpath,/home/Lin/projects/MRCViewer/build/lib:/home/Lin/projects/MRCViewer/build/lib/msg_map/lib 

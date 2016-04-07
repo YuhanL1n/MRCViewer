@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libresource.a  CMakeFiles/resource.dir/qrc_resource.o
+/usr/bin/ranlib ../../lib/libresource.a

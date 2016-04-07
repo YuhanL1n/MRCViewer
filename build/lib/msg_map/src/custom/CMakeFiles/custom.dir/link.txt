@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libcustom.a  CMakeFiles/custom.dir/custom.cpp.o
+/usr/bin/ranlib ../../lib/libcustom.a
