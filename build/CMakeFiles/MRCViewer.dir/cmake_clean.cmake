@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "moc_MRCViewer.cxx"
-  "CMakeFiles/MRCViewer.dir/main.o"
   "CMakeFiles/MRCViewer.dir/MRCViewer.o"
+  "CMakeFiles/MRCViewer.dir/main.o"
   "CMakeFiles/MRCViewer.dir/moc_MRCViewer.o"
   "bin/MRCViewer.pdb"
   "bin/MRCViewer"

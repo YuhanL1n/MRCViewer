@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libImageShow.a  CMakeFiles/ImageShow.dir/imageshow.o CMakeFiles/ImageShow.dir/moc_imageshow.o
-/usr/bin/ranlib ../../lib/libImageShow.a

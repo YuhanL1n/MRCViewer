@@ -684,57 +684,27 @@ opencv2/core/core.hpp
 opencv2/imgproc/imgproc_c.h
 ../lib/opencv_2.3.1/opencv2/video/opencv2/imgproc/imgproc_c.h
 
-/home/Lin/projects/MRCViewer/src/mrcimg/GraphUtils.cpp
-stdio.h
--
-iostream
--
-cv.h
--
-cxcore.h
--
-highgui.h
--
-GraphUtils.h
-/home/Lin/projects/MRCViewer/src/mrcimg/GraphUtils.h
-
-/home/Lin/projects/MRCViewer/src/mrcimg/GraphUtils.h
-cxcore.h
-/home/Lin/projects/MRCViewer/src/mrcimg/cxcore.h
-cv.h
-/home/Lin/projects/MRCViewer/src/mrcimg/cv.h
-
-/home/Lin/projects/MRCViewer/src/mrcimg/img_util.cpp
-img_util.h
-/home/Lin/projects/MRCViewer/src/mrcimg/img_util.h
-algorithm
--
-utility
--
-iostream
--
-
-/home/Lin/projects/MRCViewer/src/mrcimg/img_util.h
+/home/lin/MRCViewer/src/mrcimg/img_util.h
 util/exception.h
-/home/Lin/projects/MRCViewer/src/mrcimg/util/exception.h
+/home/lin/MRCViewer/src/mrcimg/util/exception.h
 set
 -
 ostream
 -
 highgui.h
-/home/Lin/projects/MRCViewer/src/mrcimg/highgui.h
+/home/lin/MRCViewer/src/mrcimg/highgui.h
 cxcore.h
-/home/Lin/projects/MRCViewer/src/mrcimg/cxcore.h
+/home/lin/MRCViewer/src/mrcimg/cxcore.h
 cv.h
-/home/Lin/projects/MRCViewer/src/mrcimg/cv.h
+/home/lin/MRCViewer/src/mrcimg/cv.h
 
-/home/Lin/projects/MRCViewer/src/mrcimg/mrc2img.cpp
+/home/lin/MRCViewer/src/mrcimg/mrc2img.cpp
 mrc2img.h
-/home/Lin/projects/MRCViewer/src/mrcimg/mrc2img.h
+/home/lin/MRCViewer/src/mrcimg/mrc2img.h
 
-/home/Lin/projects/MRCViewer/src/mrcimg/mrc2img.h
+/home/lin/MRCViewer/src/mrcimg/mrc2img.h
 mrcheader.h
-/home/Lin/projects/MRCViewer/src/mrcimg/mrcheader.h
+/home/lin/MRCViewer/src/mrcimg/mrcheader.h
 iostream
 -
 string
@@ -746,11 +716,11 @@ cxcore.hpp
 cv.hpp
 -
 img_util.h
-/home/Lin/projects/MRCViewer/src/mrcimg/img_util.h
+/home/lin/MRCViewer/src/mrcimg/img_util.h
 
-/home/Lin/projects/MRCViewer/src/mrcimg/mrcheader.cpp
+/home/lin/MRCViewer/src/mrcimg/mrcheader.cpp
 mrcheader.h
-/home/Lin/projects/MRCViewer/src/mrcimg/mrcheader.h
+/home/lin/MRCViewer/src/mrcimg/mrcheader.h
 fstream
 -
 climits
@@ -758,5 +728,5 @@ climits
 cassert
 -
 
-/home/Lin/projects/MRCViewer/src/mrcimg/mrcheader.h
+/home/lin/MRCViewer/src/mrcimg/mrcheader.h
 

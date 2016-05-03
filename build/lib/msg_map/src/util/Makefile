@@ -30,19 +30,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Lin/projects/MRCViewer
+CMAKE_SOURCE_DIR = /home/lin/MRCViewer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
+CMAKE_BINARY_DIR = /home/lin/MRCViewer/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/local/bin/cmake -i .
+	/usr/bin/cmake -i .
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -60,7 +60,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/Lin/projects/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles /home/Lin/projects/MRCViewer/build/lib/msg_map/src/util/CMakeFiles/progress.marks
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	cd /home/lin/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles /home/lin/MRCViewer/build/lib/msg_map/src/util/CMakeFiles/progress.marks
+	cd /home/lin/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/clean
+	cd /home/lin/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/preinstall
+	cd /home/lin/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/preinstall
+	cd /home/lin/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/Lin/projects/MRCViewer/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/lin/MRCViewer/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/msg_map/src/util/CMakeFiles/util.dir/rule:
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/CMakeFiles/util.dir/rule
+	cd /home/lin/MRCViewer/build && $(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/CMakeFiles/util.dir/rule
 .PHONY : lib/msg_map/src/util/CMakeFiles/util.dir/rule
 
 # Convenience name for target.
@@ -109,7 +109,7 @@ util: lib/msg_map/src/util/CMakeFiles/util.dir/rule
 
 # fast build rule for target.
 util/fast:
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/build
+	cd /home/lin/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/build
 .PHONY : util/fast
 
 exception.o: exception.cpp.o
@@ -117,7 +117,7 @@ exception.o: exception.cpp.o
 
 # target to build an object file
 exception.cpp.o:
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/exception.cpp.o
+	cd /home/lin/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/exception.cpp.o
 .PHONY : exception.cpp.o
 
 exception.i: exception.cpp.i
@@ -125,7 +125,7 @@ exception.i: exception.cpp.i
 
 # target to preprocess a source file
 exception.cpp.i:
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/exception.cpp.i
+	cd /home/lin/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/exception.cpp.i
 .PHONY : exception.cpp.i
 
 exception.s: exception.cpp.s
@@ -133,7 +133,7 @@ exception.s: exception.cpp.s
 
 # target to generate assembly for a file
 exception.cpp.s:
-	cd /home/Lin/projects/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/exception.cpp.s
+	cd /home/lin/MRCViewer/build && $(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/exception.cpp.s
 .PHONY : exception.cpp.s
 
 # Help Target
@@ -159,6 +159,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/Lin/projects/MRCViewer/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/lin/MRCViewer/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -55,8 +55,8 @@ src/mrcimg/CMakeFiles/mrcimg.dir/GraphUtils.o
  ../lib/opencv_2.3.1/opencv2/legacy/compat.hpp
  ../lib/opencv_2.3.1/opencv2/objdetect/objdetect.hpp
  ../lib/opencv_2.3.1/opencv2/video/tracking.hpp
- /home/Lin/projects/MRCViewer/src/mrcimg/GraphUtils.cpp
- /home/Lin/projects/MRCViewer/src/mrcimg/GraphUtils.h
+ /home/lin/MRCViewer/src/mrcimg/GraphUtils.cpp
+ /home/lin/MRCViewer/src/mrcimg/GraphUtils.h
 src/mrcimg/CMakeFiles/mrcimg.dir/img_util.o
  ../lib/msg_map/src/util/exception.h
  ../lib/opencv_2.3.1/opencv/cv.h
@@ -112,8 +112,8 @@ src/mrcimg/CMakeFiles/mrcimg.dir/img_util.o
  ../lib/opencv_2.3.1/opencv2/legacy/compat.hpp
  ../lib/opencv_2.3.1/opencv2/objdetect/objdetect.hpp
  ../lib/opencv_2.3.1/opencv2/video/tracking.hpp
- /home/Lin/projects/MRCViewer/src/mrcimg/img_util.cpp
- /home/Lin/projects/MRCViewer/src/mrcimg/img_util.h
+ /home/lin/MRCViewer/src/mrcimg/img_util.cpp
+ /home/lin/MRCViewer/src/mrcimg/img_util.h
 src/mrcimg/CMakeFiles/mrcimg.dir/mrc2img.o
  ../lib/msg_map/src/util/exception.h
  ../lib/opencv_2.3.1/opencv/cv.h
@@ -171,10 +171,10 @@ src/mrcimg/CMakeFiles/mrcimg.dir/mrc2img.o
  ../lib/opencv_2.3.1/opencv2/legacy/compat.hpp
  ../lib/opencv_2.3.1/opencv2/objdetect/objdetect.hpp
  ../lib/opencv_2.3.1/opencv2/video/tracking.hpp
- /home/Lin/projects/MRCViewer/src/mrcimg/img_util.h
- /home/Lin/projects/MRCViewer/src/mrcimg/mrc2img.cpp
- /home/Lin/projects/MRCViewer/src/mrcimg/mrc2img.h
- /home/Lin/projects/MRCViewer/src/mrcimg/mrcheader.h
+ /home/lin/MRCViewer/src/mrcimg/img_util.h
+ /home/lin/MRCViewer/src/mrcimg/mrc2img.cpp
+ /home/lin/MRCViewer/src/mrcimg/mrc2img.h
+ /home/lin/MRCViewer/src/mrcimg/mrcheader.h
 src/mrcimg/CMakeFiles/mrcimg.dir/mrcheader.o
- /home/Lin/projects/MRCViewer/src/mrcimg/mrcheader.cpp
- /home/Lin/projects/MRCViewer/src/mrcimg/mrcheader.h
+ /home/lin/MRCViewer/src/mrcimg/mrcheader.cpp
+ /home/lin/MRCViewer/src/mrcimg/mrcheader.h

@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Lin/projects/MRCViewer
+CMAKE_SOURCE_DIR = /home/lin/MRCViewer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
+CMAKE_BINARY_DIR = /home/lin/MRCViewer/build
 
 # Include any dependencies generated for this target.
 include src/XyzView/CMakeFiles/XyzView.dir/depend.make
@@ -50,39 +50,39 @@ include src/XyzView/CMakeFiles/XyzView.dir/progress.make
 include src/XyzView/CMakeFiles/XyzView.dir/flags.make
 
 src/XyzView/XyzWindow.moc: ../src/XyzView/XyzWindow.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating XyzWindow.moc"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/lib64/qt4/bin/moc-qt4 -I/home/Lin/projects/MRCViewer/lib/msg_map/src -I/home/Lin/projects/MRCViewer/lib -I/home/Lin/projects/MRCViewer/src -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1 -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv2 -I/home/Lin/projects/MRCViewer/lib/vis -I/home/Lin/projects/MRCViewer/build/src -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build -I/ui -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build/src/XyzView -I/usr/include -I/usr/include/QtOpenGL -I/usr/include/QtGui -I/usr/include/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/Lin/projects/MRCViewer/build/src/XyzView/XyzWindow.moc /home/Lin/projects/MRCViewer/src/XyzView/XyzWindow.h
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/lin/MRCViewer/build/src/XyzView/XyzWindow.moc_parameters
 
 src/XyzView/XyzGL.moc: ../src/XyzView/XyzGL.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating XyzGL.moc"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/lib64/qt4/bin/moc-qt4 -I/home/Lin/projects/MRCViewer/lib/msg_map/src -I/home/Lin/projects/MRCViewer/lib -I/home/Lin/projects/MRCViewer/src -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1 -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv2 -I/home/Lin/projects/MRCViewer/lib/vis -I/home/Lin/projects/MRCViewer/build/src -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build -I/ui -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build/src/XyzView -I/usr/include -I/usr/include/QtOpenGL -I/usr/include/QtGui -I/usr/include/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/Lin/projects/MRCViewer/build/src/XyzView/XyzGL.moc /home/Lin/projects/MRCViewer/src/XyzView/XyzGL.h
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/lin/MRCViewer/build/src/XyzView/XyzGL.moc_parameters
 
 src/XyzView/moc_XyzGL.cxx: ../src/XyzView/XyzGL.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_XyzGL.cxx"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/lib64/qt4/bin/moc-qt4 -I/home/Lin/projects/MRCViewer/lib/msg_map/src -I/home/Lin/projects/MRCViewer/lib -I/home/Lin/projects/MRCViewer/src -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1 -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv2 -I/home/Lin/projects/MRCViewer/lib/vis -I/home/Lin/projects/MRCViewer/build/src -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build -I/ui -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build/src/XyzView -I/usr/include -I/usr/include/QtOpenGL -I/usr/include/QtGui -I/usr/include/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzGL.cxx /home/Lin/projects/MRCViewer/src/XyzView/XyzGL.h
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/lin/MRCViewer/build/src/XyzView/moc_XyzGL.cxx_parameters
 
 src/XyzView/moc_XyzWindow.cxx: ../src/XyzView/XyzWindow.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_XyzWindow.cxx"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/lib64/qt4/bin/moc-qt4 -I/home/Lin/projects/MRCViewer/lib/msg_map/src -I/home/Lin/projects/MRCViewer/lib -I/home/Lin/projects/MRCViewer/src -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1 -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv2 -I/home/Lin/projects/MRCViewer/lib/vis -I/home/Lin/projects/MRCViewer/build/src -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build -I/ui -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build/src/XyzView -I/usr/include -I/usr/include/QtOpenGL -I/usr/include/QtGui -I/usr/include/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx /home/Lin/projects/MRCViewer/src/XyzView/XyzWindow.h
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/lin/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx_parameters
 
 src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o: src/XyzView/CMakeFiles/XyzView.dir/flags.make
 src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o: ../src/XyzView/XyzWindow.cpp
 src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o: src/XyzView/XyzWindow.moc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/XyzWindow.o -c /home/Lin/projects/MRCViewer/src/XyzView/XyzWindow.cpp
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/XyzWindow.o -c /home/lin/MRCViewer/src/XyzView/XyzWindow.cpp
 
 src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/XyzView.dir/XyzWindow.i"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/src/XyzView/XyzWindow.cpp > CMakeFiles/XyzView.dir/XyzWindow.i
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/src/XyzView/XyzWindow.cpp > CMakeFiles/XyzView.dir/XyzWindow.i
 
 src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/XyzView.dir/XyzWindow.s"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/src/XyzView/XyzWindow.cpp -o CMakeFiles/XyzView.dir/XyzWindow.s
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/src/XyzView/XyzWindow.cpp -o CMakeFiles/XyzView.dir/XyzWindow.s
 
 src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o.requires:
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o.requires
@@ -96,17 +96,17 @@ src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o.provides.build: src/XyzView/CMake
 src/XyzView/CMakeFiles/XyzView.dir/XyzGL.o: src/XyzView/CMakeFiles/XyzView.dir/flags.make
 src/XyzView/CMakeFiles/XyzView.dir/XyzGL.o: ../src/XyzView/XyzGL.cpp
 src/XyzView/CMakeFiles/XyzView.dir/XyzGL.o: src/XyzView/XyzGL.moc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/XyzView/CMakeFiles/XyzView.dir/XyzGL.o"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/XyzGL.o -c /home/Lin/projects/MRCViewer/src/XyzView/XyzGL.cpp
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/XyzGL.o -c /home/lin/MRCViewer/src/XyzView/XyzGL.cpp
 
 src/XyzView/CMakeFiles/XyzView.dir/XyzGL.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/XyzView.dir/XyzGL.i"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/src/XyzView/XyzGL.cpp > CMakeFiles/XyzView.dir/XyzGL.i
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/src/XyzView/XyzGL.cpp > CMakeFiles/XyzView.dir/XyzGL.i
 
 src/XyzView/CMakeFiles/XyzView.dir/XyzGL.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/XyzView.dir/XyzGL.s"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/src/XyzView/XyzGL.cpp -o CMakeFiles/XyzView.dir/XyzGL.s
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/src/XyzView/XyzGL.cpp -o CMakeFiles/XyzView.dir/XyzGL.s
 
 src/XyzView/CMakeFiles/XyzView.dir/XyzGL.o.requires:
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/XyzGL.o.requires
@@ -119,17 +119,17 @@ src/XyzView/CMakeFiles/XyzView.dir/XyzGL.o.provides.build: src/XyzView/CMakeFile
 
 src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.o: src/XyzView/CMakeFiles/XyzView.dir/flags.make
 src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.o: ../src/XyzView/b3dgfx.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.o"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/b3dgfx.o -c /home/Lin/projects/MRCViewer/src/XyzView/b3dgfx.cpp
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/b3dgfx.o -c /home/lin/MRCViewer/src/XyzView/b3dgfx.cpp
 
 src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/XyzView.dir/b3dgfx.i"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/src/XyzView/b3dgfx.cpp > CMakeFiles/XyzView.dir/b3dgfx.i
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/src/XyzView/b3dgfx.cpp > CMakeFiles/XyzView.dir/b3dgfx.i
 
 src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/XyzView.dir/b3dgfx.s"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/src/XyzView/b3dgfx.cpp -o CMakeFiles/XyzView.dir/b3dgfx.s
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/src/XyzView/b3dgfx.cpp -o CMakeFiles/XyzView.dir/b3dgfx.s
 
 src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.o.requires:
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.o.requires
@@ -142,17 +142,17 @@ src/XyzView/CMakeFiles/XyzView.dir/b3dgfx.o.provides.build: src/XyzView/CMakeFil
 
 src/XyzView/CMakeFiles/XyzView.dir/func.o: src/XyzView/CMakeFiles/XyzView.dir/flags.make
 src/XyzView/CMakeFiles/XyzView.dir/func.o: ../src/XyzView/func.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/XyzView/CMakeFiles/XyzView.dir/func.o"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/func.o -c /home/Lin/projects/MRCViewer/src/XyzView/func.cpp
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/func.o -c /home/lin/MRCViewer/src/XyzView/func.cpp
 
 src/XyzView/CMakeFiles/XyzView.dir/func.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/XyzView.dir/func.i"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/src/XyzView/func.cpp > CMakeFiles/XyzView.dir/func.i
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/src/XyzView/func.cpp > CMakeFiles/XyzView.dir/func.i
 
 src/XyzView/CMakeFiles/XyzView.dir/func.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/XyzView.dir/func.s"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/src/XyzView/func.cpp -o CMakeFiles/XyzView.dir/func.s
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/src/XyzView/func.cpp -o CMakeFiles/XyzView.dir/func.s
 
 src/XyzView/CMakeFiles/XyzView.dir/func.o.requires:
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/func.o.requires
@@ -165,17 +165,17 @@ src/XyzView/CMakeFiles/XyzView.dir/func.o.provides.build: src/XyzView/CMakeFiles
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.o: src/XyzView/CMakeFiles/XyzView.dir/flags.make
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.o: src/XyzView/moc_XyzGL.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.o"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/moc_XyzGL.o -c /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzGL.cxx
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/moc_XyzGL.o -c /home/lin/MRCViewer/build/src/XyzView/moc_XyzGL.cxx
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/XyzView.dir/moc_XyzGL.i"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzGL.cxx > CMakeFiles/XyzView.dir/moc_XyzGL.i
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/build/src/XyzView/moc_XyzGL.cxx > CMakeFiles/XyzView.dir/moc_XyzGL.i
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/XyzView.dir/moc_XyzGL.s"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzGL.cxx -o CMakeFiles/XyzView.dir/moc_XyzGL.s
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/build/src/XyzView/moc_XyzGL.cxx -o CMakeFiles/XyzView.dir/moc_XyzGL.s
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.o.requires:
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.o.requires
@@ -188,17 +188,17 @@ src/XyzView/CMakeFiles/XyzView.dir/moc_XyzGL.o.provides.build: src/XyzView/CMake
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.o: src/XyzView/CMakeFiles/XyzView.dir/flags.make
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.o: src/XyzView/moc_XyzWindow.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.o"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/moc_XyzWindow.o -c /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/XyzView.dir/moc_XyzWindow.o -c /home/lin/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/XyzView.dir/moc_XyzWindow.i"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx > CMakeFiles/XyzView.dir/moc_XyzWindow.i
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx > CMakeFiles/XyzView.dir/moc_XyzWindow.i
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/XyzView.dir/moc_XyzWindow.s"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx -o CMakeFiles/XyzView.dir/moc_XyzWindow.s
+	cd /home/lin/MRCViewer/build/src/XyzView && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx -o CMakeFiles/XyzView.dir/moc_XyzWindow.s
 
 src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.o.requires:
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.o.requires
@@ -230,8 +230,8 @@ lib/libXyzView.a: src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.o
 lib/libXyzView.a: src/XyzView/CMakeFiles/XyzView.dir/build.make
 lib/libXyzView.a: src/XyzView/CMakeFiles/XyzView.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../../lib/libXyzView.a"
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && $(CMAKE_COMMAND) -P CMakeFiles/XyzView.dir/cmake_clean_target.cmake
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/XyzView.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/lin/MRCViewer/build/src/XyzView && $(CMAKE_COMMAND) -P CMakeFiles/XyzView.dir/cmake_clean_target.cmake
+	cd /home/lin/MRCViewer/build/src/XyzView && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/XyzView.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/XyzView/CMakeFiles/XyzView.dir/build: lib/libXyzView.a
@@ -246,13 +246,13 @@ src/XyzView/CMakeFiles/XyzView.dir/requires: src/XyzView/CMakeFiles/XyzView.dir/
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/requires
 
 src/XyzView/CMakeFiles/XyzView.dir/clean:
-	cd /home/Lin/projects/MRCViewer/build/src/XyzView && $(CMAKE_COMMAND) -P CMakeFiles/XyzView.dir/cmake_clean.cmake
+	cd /home/lin/MRCViewer/build/src/XyzView && $(CMAKE_COMMAND) -P CMakeFiles/XyzView.dir/cmake_clean.cmake
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/clean
 
 src/XyzView/CMakeFiles/XyzView.dir/depend: src/XyzView/XyzWindow.moc
 src/XyzView/CMakeFiles/XyzView.dir/depend: src/XyzView/XyzGL.moc
 src/XyzView/CMakeFiles/XyzView.dir/depend: src/XyzView/moc_XyzGL.cxx
 src/XyzView/CMakeFiles/XyzView.dir/depend: src/XyzView/moc_XyzWindow.cxx
-	cd /home/Lin/projects/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/Lin/projects/MRCViewer /home/Lin/projects/MRCViewer/src/XyzView /home/Lin/projects/MRCViewer/build /home/Lin/projects/MRCViewer/build/src/XyzView /home/Lin/projects/MRCViewer/build/src/XyzView/CMakeFiles/XyzView.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lin/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lin/MRCViewer /home/lin/MRCViewer/src/XyzView /home/lin/MRCViewer/build /home/lin/MRCViewer/build/src/XyzView /home/lin/MRCViewer/build/src/XyzView/CMakeFiles/XyzView.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/depend
 

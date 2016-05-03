@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Lin/projects/MRCViewer
+CMAKE_SOURCE_DIR = /home/lin/MRCViewer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
+CMAKE_BINARY_DIR = /home/lin/MRCViewer/build
 
 # Include any dependencies generated for this target.
 include src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/depend.make
@@ -49,54 +49,25 @@ include src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/flags.make
 
-src/ImageViewWindow/ImageViewWindow.moc: ../src/ImageViewWindow/ImageViewWindow.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ImageViewWindow.moc"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/lib64/qt4/bin/moc-qt4 -I/home/Lin/projects/MRCViewer/lib/msg_map/src -I/home/Lin/projects/MRCViewer/lib -I/home/Lin/projects/MRCViewer/src -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1 -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv2 -I/home/Lin/projects/MRCViewer/lib/vis -I/home/Lin/projects/MRCViewer/build/src -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build -I/ui -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build/src/ImageViewWindow -I/ui -DQT_GUI_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/Lin/projects/MRCViewer/build/src/ImageViewWindow/ImageViewWindow.moc /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImageViewWindow.h
-
 src/ImageViewWindow/ImgInfo.moc: ../src/ImageViewWindow/ImgInfo.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ImgInfo.moc"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/lib64/qt4/bin/moc-qt4 -I/home/Lin/projects/MRCViewer/lib/msg_map/src -I/home/Lin/projects/MRCViewer/lib -I/home/Lin/projects/MRCViewer/src -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1 -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv2 -I/home/Lin/projects/MRCViewer/lib/vis -I/home/Lin/projects/MRCViewer/build/src -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build -I/ui -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build/src/ImageViewWindow -I/ui -DQT_GUI_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/Lin/projects/MRCViewer/build/src/ImageViewWindow/ImgInfo.moc /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImgInfo.h
-
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/flags.make
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o: ../src/ImageViewWindow/ImageViewWindow.cpp
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o: src/ImageViewWindow/ImageViewWindow.moc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o -c /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImageViewWindow.cpp
-
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ImageViewWindow.dir/ImageViewWindow.i"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImageViewWindow.cpp > CMakeFiles/ImageViewWindow.dir/ImageViewWindow.i
-
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ImageViewWindow.dir/ImageViewWindow.s"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImageViewWindow.cpp -o CMakeFiles/ImageViewWindow.dir/ImageViewWindow.s
-
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.requires:
-.PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.requires
-
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.provides: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.requires
-	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.provides.build
-.PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.provides
-
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.provides.build: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o
+	cd /home/lin/MRCViewer/build/src/ImageViewWindow && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/lin/MRCViewer/build/src/ImageViewWindow/ImgInfo.moc_parameters
 
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/flags.make
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o: ../src/ImageViewWindow/ImgInfo.cpp
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o: src/ImageViewWindow/ImgInfo.moc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ImageViewWindow.dir/ImgInfo.o -c /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImgInfo.cpp
+	cd /home/lin/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ImageViewWindow.dir/ImgInfo.o -c /home/lin/MRCViewer/src/ImageViewWindow/ImgInfo.cpp
 
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ImageViewWindow.dir/ImgInfo.i"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImgInfo.cpp > CMakeFiles/ImageViewWindow.dir/ImgInfo.i
+	cd /home/lin/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/src/ImageViewWindow/ImgInfo.cpp > CMakeFiles/ImageViewWindow.dir/ImgInfo.i
 
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ImageViewWindow.dir/ImgInfo.s"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/src/ImageViewWindow/ImgInfo.cpp -o CMakeFiles/ImageViewWindow.dir/ImgInfo.s
+	cd /home/lin/MRCViewer/build/src/ImageViewWindow && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/src/ImageViewWindow/ImgInfo.cpp -o CMakeFiles/ImageViewWindow.dir/ImgInfo.s
 
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o.requires:
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o.requires
@@ -109,34 +80,30 @@ src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o.provides.build: src
 
 # Object files for target ImageViewWindow
 ImageViewWindow_OBJECTS = \
-"CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o" \
 "CMakeFiles/ImageViewWindow.dir/ImgInfo.o"
 
 # External object files for target ImageViewWindow
 ImageViewWindow_EXTERNAL_OBJECTS =
 
-lib/libImageViewWindow.a: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o
 lib/libImageViewWindow.a: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o
 lib/libImageViewWindow.a: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make
 lib/libImageViewWindow.a: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../../lib/libImageViewWindow.a"
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && $(CMAKE_COMMAND) -P CMakeFiles/ImageViewWindow.dir/cmake_clean_target.cmake
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ImageViewWindow.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/lin/MRCViewer/build/src/ImageViewWindow && $(CMAKE_COMMAND) -P CMakeFiles/ImageViewWindow.dir/cmake_clean_target.cmake
+	cd /home/lin/MRCViewer/build/src/ImageViewWindow && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ImageViewWindow.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build: lib/libImageViewWindow.a
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build
 
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/requires: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o.requires
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/requires: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/ImgInfo.o.requires
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/requires
 
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean:
-	cd /home/Lin/projects/MRCViewer/build/src/ImageViewWindow && $(CMAKE_COMMAND) -P CMakeFiles/ImageViewWindow.dir/cmake_clean.cmake
+	cd /home/lin/MRCViewer/build/src/ImageViewWindow && $(CMAKE_COMMAND) -P CMakeFiles/ImageViewWindow.dir/cmake_clean.cmake
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean
 
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/depend: src/ImageViewWindow/ImageViewWindow.moc
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/depend: src/ImageViewWindow/ImgInfo.moc
-	cd /home/Lin/projects/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/Lin/projects/MRCViewer /home/Lin/projects/MRCViewer/src/ImageViewWindow /home/Lin/projects/MRCViewer/build /home/Lin/projects/MRCViewer/build/src/ImageViewWindow /home/Lin/projects/MRCViewer/build/src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lin/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lin/MRCViewer /home/lin/MRCViewer/src/ImageViewWindow /home/lin/MRCViewer/build /home/lin/MRCViewer/build/src/ImageViewWindow /home/lin/MRCViewer/build/src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/depend
 

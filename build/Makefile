@@ -30,19 +30,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Lin/projects/MRCViewer
+CMAKE_SOURCE_DIR = /home/lin/MRCViewer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
+CMAKE_BINARY_DIR = /home/lin/MRCViewer/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/local/bin/cmake -i .
+	/usr/bin/cmake -i .
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -60,7 +60,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles /home/Lin/projects/MRCViewer/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles /home/lin/MRCViewer/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -215,6 +215,19 @@ ImageViewWindow/fast:
 	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build
 .PHONY : ImageViewWindow/fast
 
+#=============================================================================
+# Target rules for targets named buff
+
+# Build rule for target.
+buff: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 buff
+.PHONY : buff
+
+# fast build rule for target.
+buff/fast:
+	$(MAKE) -f src/buff/CMakeFiles/buff.dir/build.make src/buff/CMakeFiles/buff.dir/build
+.PHONY : buff/fast
+
 # target to build an object file
 MRCViewer.o:
 	$(MAKE) -f CMakeFiles/MRCViewer.dir/build.make CMakeFiles/MRCViewer.dir/MRCViewer.o
@@ -277,6 +290,7 @@ help:
 	@echo "... resource"
 	@echo "... XyzView"
 	@echo "... ImageViewWindow"
+	@echo "... buff"
 	@echo "... MRCViewer.o"
 	@echo "... MRCViewer.i"
 	@echo "... MRCViewer.s"

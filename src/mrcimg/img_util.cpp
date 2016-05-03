@@ -128,7 +128,7 @@ void util::ConvertTo1(IplImage* img)
 #undef CUTOFF
 }
 
-void util::CopyToUChar256(const IplImage* img, IplImage** cpy, int w, int b)
+void util::	CopyToUChar256(const IplImage* img, IplImage** cpy, int w, int b)
 {
 //     cout<<"CopyToUChar256"<<endl;
     *cpy = cvCreateImage(cvSize(img->width, img->height), IPL_DEPTH_8U, 1);

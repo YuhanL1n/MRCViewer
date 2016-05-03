@@ -4,9 +4,9 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/Lin/projects/MRCViewer/MRCViewer.cpp" "/home/Lin/projects/MRCViewer/build/CMakeFiles/MRCViewer.dir/MRCViewer.o"
-  "/home/Lin/projects/MRCViewer/main.cpp" "/home/Lin/projects/MRCViewer/build/CMakeFiles/MRCViewer.dir/main.o"
-  "/home/Lin/projects/MRCViewer/build/moc_MRCViewer.cxx" "/home/Lin/projects/MRCViewer/build/CMakeFiles/MRCViewer.dir/moc_MRCViewer.o"
+  "/home/lin/MRCViewer/MRCViewer.cpp" "/home/lin/MRCViewer/build/CMakeFiles/MRCViewer.dir/MRCViewer.o"
+  "/home/lin/MRCViewer/main.cpp" "/home/lin/MRCViewer/build/CMakeFiles/MRCViewer.dir/main.o"
+  "/home/lin/MRCViewer/build/moc_MRCViewer.cxx" "/home/lin/MRCViewer/build/CMakeFiles/MRCViewer.dir/moc_MRCViewer.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,9 +19,12 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/Lin/projects/MRCViewer/build/src/mrcimg/CMakeFiles/mrcimg.dir/DependInfo.cmake"
-  "/home/Lin/projects/MRCViewer/build/lib/msg_map/src/util/CMakeFiles/util.dir/DependInfo.cmake"
-  "/home/Lin/projects/MRCViewer/build/lib/msg_map/src/core/CMakeFiles/core.dir/DependInfo.cmake"
+  "/home/lin/MRCViewer/build/src/mrcimg/CMakeFiles/mrcimg.dir/DependInfo.cmake"
+  "/home/lin/MRCViewer/build/lib/msg_map/src/util/CMakeFiles/util.dir/DependInfo.cmake"
+  "/home/lin/MRCViewer/build/lib/msg_map/src/core/CMakeFiles/core.dir/DependInfo.cmake"
+  "/home/lin/MRCViewer/build/src/XyzView/CMakeFiles/XyzView.dir/DependInfo.cmake"
+  "/home/lin/MRCViewer/build/src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/DependInfo.cmake"
+  "/home/lin/MRCViewer/build/src/resource/CMakeFiles/resource.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
@@ -34,25 +37,26 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../lib/opencv_2.3.1/opencv2"
   "../lib/vis"
   "src"
-  "/usr/include/QtGui"
-  "/usr/include/QtCore"
-  "/usr/include/QtDesigner"
-  "/usr/include/QtDeclarative"
-  "/usr/include/QtScriptTools"
-  "/usr/include/QtDBus"
-  "/usr/include/QtXml"
-  "/usr/include/QtSql"
-  "/usr/include/QtOpenGL"
-  "/usr/include/QtMultimedia"
-  "/usr/include/QtNetwork"
-  "/usr/include/QtXmlPatterns"
-  "/usr/include/QtHelp"
-  "/usr/include/QtUiTools"
-  "/usr/include/QtTest"
-  "/usr/include/QtScript"
-  "/usr/include/QtSvg"
-  "/usr/include/Qt3Support"
-  "/usr/lib64/qt4/mkspecs/default"
+  "/usr/include/qt4"
+  "/usr/include/qt4/QtGui"
+  "/usr/include/qt4/QtCore"
+  "/usr/include/qt4/QtDesigner"
+  "/usr/include/qt4/QtDeclarative"
+  "/usr/include/qt4/QtScriptTools"
+  "/usr/include/qt4/QtDBus"
+  "/usr/include/qt4/QtXml"
+  "/usr/include/qt4/QtSql"
+  "/usr/include/qt4/QtOpenGL"
+  "/usr/include/qt4/QtNetwork"
+  "/usr/include/qt4/QtXmlPatterns"
+  "/usr/include/qt4/QtWebKit"
+  "/usr/include/qt4/QtHelp"
+  "/usr/include/qt4/QtUiTools"
+  "/usr/include/qt4/QtTest"
+  "/usr/include/qt4/QtScript"
+  "/usr/include/qt4/QtSvg"
+  "/usr/include/qt4/Qt3Support"
+  "/usr/share/qt4/mkspecs/default"
   "."
   "/ui"
   )

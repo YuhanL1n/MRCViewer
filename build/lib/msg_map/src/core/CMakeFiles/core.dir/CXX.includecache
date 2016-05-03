@@ -24,27 +24,27 @@ cstdio
 ctime
 -
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/msg.h
+/home/lin/MRCViewer/lib/msg_map/src/core/msg.h
 vector
 -
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/msg_map.cpp
+/home/lin/MRCViewer/lib/msg_map/src/core/msg_map.cpp
 msg_map.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/msg_map.h
+/home/lin/MRCViewer/lib/msg_map/src/core/msg_map.h
 string.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/string.h
+/home/lin/MRCViewer/lib/msg_map/src/core/string.h
 stdio.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/stdio.h
+/home/lin/MRCViewer/lib/msg_map/src/core/stdio.h
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/msg_map.h
+/home/lin/MRCViewer/lib/msg_map/src/core/msg_map.h
 msg.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/msg.h
+/home/lin/MRCViewer/lib/msg_map/src/core/msg.h
 thread.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/thread.h
+/home/lin/MRCViewer/lib/msg_map/src/core/thread.h
 proxy.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/proxy.h
+/home/lin/MRCViewer/lib/msg_map/src/core/proxy.h
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/proc_state.h
+/home/lin/MRCViewer/lib/msg_map/src/core/proc_state.h
 limits.h
 -
 stdlib.h
@@ -54,9 +54,9 @@ stdio.h
 errno.h
 -
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/proxy.cpp
+/home/lin/MRCViewer/lib/msg_map/src/core/proxy.cpp
 proxy.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/proxy.h
+/home/lin/MRCViewer/lib/msg_map/src/core/proxy.h
 iostream
 -
 stdio.h
@@ -70,9 +70,9 @@ cstring
 stdlib.h
 -
 proc_state.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/proc_state.h
+/home/lin/MRCViewer/lib/msg_map/src/core/proc_state.h
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/proxy.h
+/home/lin/MRCViewer/lib/msg_map/src/core/proxy.h
 queue
 -
 unistd.h
@@ -88,13 +88,13 @@ sys/wait.h
 malloc.h
 -
 thread.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/thread.h
+/home/lin/MRCViewer/lib/msg_map/src/core/thread.h
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/thread.cpp
+/home/lin/MRCViewer/lib/msg_map/src/core/thread.cpp
 thread.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/thread.h
+/home/lin/MRCViewer/lib/msg_map/src/core/thread.h
 util/exception.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/util/exception.h
+/home/lin/MRCViewer/lib/msg_map/src/core/util/exception.h
 iostream
 -
 stdio.h
@@ -112,15 +112,15 @@ unistd.h
 signal.h
 -
 proc_state.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/proc_state.h
+/home/lin/MRCViewer/lib/msg_map/src/core/proc_state.h
 
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/thread.h
+/home/lin/MRCViewer/lib/msg_map/src/core/thread.h
 queue
 -
 pthread.h
 -
 msg.h
-/home/Lin/projects/MRCViewer/lib/msg_map/src/core/msg.h
+/home/lin/MRCViewer/lib/msg_map/src/core/msg.h
 sys/stat.h
 -
 string

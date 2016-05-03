@@ -1,7 +1,5 @@
 FILE(REMOVE_RECURSE
-  "ImageViewWindow.moc"
   "ImgInfo.moc"
-  "CMakeFiles/ImageViewWindow.dir/ImageViewWindow.o"
   "CMakeFiles/ImageViewWindow.dir/ImgInfo.o"
   "../../lib/libImageViewWindow.pdb"
   "../../lib/libImageViewWindow.a"

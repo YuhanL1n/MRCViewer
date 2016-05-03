@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Lin/projects/MRCViewer
+CMAKE_SOURCE_DIR = /home/lin/MRCViewer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
+CMAKE_BINARY_DIR = /home/lin/MRCViewer/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MRCViewer.dir/depend.make
@@ -50,46 +50,23 @@ include CMakeFiles/MRCViewer.dir/progress.make
 include CMakeFiles/MRCViewer.dir/flags.make
 
 moc_MRCViewer.cxx: ../MRCViewer.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_MRCViewer.cxx"
-	/usr/lib64/qt4/bin/moc-qt4 -I/home/Lin/projects/MRCViewer/lib/msg_map/src -I/home/Lin/projects/MRCViewer/lib -I/home/Lin/projects/MRCViewer/src -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1 -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv -I/home/Lin/projects/MRCViewer/lib/opencv_2.3.1/opencv2 -I/home/Lin/projects/MRCViewer/lib/vis -I/home/Lin/projects/MRCViewer/build/src -I/usr/include -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/include/QtDesigner -I/usr/include/QtDeclarative -I/usr/include/QtScriptTools -I/usr/include/QtDBus -I/usr/include/QtDesigner -I/usr/include/QtXml -I/usr/include/QtSql -I/usr/include/QtOpenGL -I/usr/include/QtMultimedia -I/usr/include/QtNetwork -I/usr/include/QtXmlPatterns -I/usr/include/QtHelp -I/usr/include/QtUiTools -I/usr/include/QtTest -I/usr/include/QtScript -I/usr/include/QtSvg -I/usr/include/Qt3Support -I/usr/include/QtGui -I/usr/include/QtCore -I/usr/lib64/qt4/mkspecs/default -I/usr/include -I/usr/include/QtCore -I/home/Lin/projects/MRCViewer/build -I/ui -DQT_GUI_LIB -DQT_CORE_LIB -o /home/Lin/projects/MRCViewer/build/moc_MRCViewer.cxx /home/Lin/projects/MRCViewer/MRCViewer.h
-
-CMakeFiles/MRCViewer.dir/main.o: CMakeFiles/MRCViewer.dir/flags.make
-CMakeFiles/MRCViewer.dir/main.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/MRCViewer.dir/main.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MRCViewer.dir/main.o -c /home/Lin/projects/MRCViewer/main.cpp
-
-CMakeFiles/MRCViewer.dir/main.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MRCViewer.dir/main.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/main.cpp > CMakeFiles/MRCViewer.dir/main.i
-
-CMakeFiles/MRCViewer.dir/main.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MRCViewer.dir/main.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/main.cpp -o CMakeFiles/MRCViewer.dir/main.s
-
-CMakeFiles/MRCViewer.dir/main.o.requires:
-.PHONY : CMakeFiles/MRCViewer.dir/main.o.requires
-
-CMakeFiles/MRCViewer.dir/main.o.provides: CMakeFiles/MRCViewer.dir/main.o.requires
-	$(MAKE) -f CMakeFiles/MRCViewer.dir/build.make CMakeFiles/MRCViewer.dir/main.o.provides.build
-.PHONY : CMakeFiles/MRCViewer.dir/main.o.provides
-
-CMakeFiles/MRCViewer.dir/main.o.provides.build: CMakeFiles/MRCViewer.dir/main.o
+	/usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/lin/MRCViewer/build/moc_MRCViewer.cxx_parameters
 
 CMakeFiles/MRCViewer.dir/MRCViewer.o: CMakeFiles/MRCViewer.dir/flags.make
 CMakeFiles/MRCViewer.dir/MRCViewer.o: ../MRCViewer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/MRCViewer.dir/MRCViewer.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MRCViewer.dir/MRCViewer.o -c /home/Lin/projects/MRCViewer/MRCViewer.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MRCViewer.dir/MRCViewer.o -c /home/lin/MRCViewer/MRCViewer.cpp
 
 CMakeFiles/MRCViewer.dir/MRCViewer.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MRCViewer.dir/MRCViewer.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/MRCViewer.cpp > CMakeFiles/MRCViewer.dir/MRCViewer.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/MRCViewer.cpp > CMakeFiles/MRCViewer.dir/MRCViewer.i
 
 CMakeFiles/MRCViewer.dir/MRCViewer.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MRCViewer.dir/MRCViewer.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/MRCViewer.cpp -o CMakeFiles/MRCViewer.dir/MRCViewer.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/MRCViewer.cpp -o CMakeFiles/MRCViewer.dir/MRCViewer.s
 
 CMakeFiles/MRCViewer.dir/MRCViewer.o.requires:
 .PHONY : CMakeFiles/MRCViewer.dir/MRCViewer.o.requires
@@ -100,19 +77,42 @@ CMakeFiles/MRCViewer.dir/MRCViewer.o.provides: CMakeFiles/MRCViewer.dir/MRCViewe
 
 CMakeFiles/MRCViewer.dir/MRCViewer.o.provides.build: CMakeFiles/MRCViewer.dir/MRCViewer.o
 
+CMakeFiles/MRCViewer.dir/main.o: CMakeFiles/MRCViewer.dir/flags.make
+CMakeFiles/MRCViewer.dir/main.o: ../main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/MRCViewer.dir/main.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MRCViewer.dir/main.o -c /home/lin/MRCViewer/main.cpp
+
+CMakeFiles/MRCViewer.dir/main.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MRCViewer.dir/main.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/main.cpp > CMakeFiles/MRCViewer.dir/main.i
+
+CMakeFiles/MRCViewer.dir/main.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MRCViewer.dir/main.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/main.cpp -o CMakeFiles/MRCViewer.dir/main.s
+
+CMakeFiles/MRCViewer.dir/main.o.requires:
+.PHONY : CMakeFiles/MRCViewer.dir/main.o.requires
+
+CMakeFiles/MRCViewer.dir/main.o.provides: CMakeFiles/MRCViewer.dir/main.o.requires
+	$(MAKE) -f CMakeFiles/MRCViewer.dir/build.make CMakeFiles/MRCViewer.dir/main.o.provides.build
+.PHONY : CMakeFiles/MRCViewer.dir/main.o.provides
+
+CMakeFiles/MRCViewer.dir/main.o.provides.build: CMakeFiles/MRCViewer.dir/main.o
+
 CMakeFiles/MRCViewer.dir/moc_MRCViewer.o: CMakeFiles/MRCViewer.dir/flags.make
 CMakeFiles/MRCViewer.dir/moc_MRCViewer.o: moc_MRCViewer.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/MRCViewer.dir/moc_MRCViewer.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MRCViewer.dir/moc_MRCViewer.o -c /home/Lin/projects/MRCViewer/build/moc_MRCViewer.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MRCViewer.dir/moc_MRCViewer.o -c /home/lin/MRCViewer/build/moc_MRCViewer.cxx
 
 CMakeFiles/MRCViewer.dir/moc_MRCViewer.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MRCViewer.dir/moc_MRCViewer.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/Lin/projects/MRCViewer/build/moc_MRCViewer.cxx > CMakeFiles/MRCViewer.dir/moc_MRCViewer.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lin/MRCViewer/build/moc_MRCViewer.cxx > CMakeFiles/MRCViewer.dir/moc_MRCViewer.i
 
 CMakeFiles/MRCViewer.dir/moc_MRCViewer.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MRCViewer.dir/moc_MRCViewer.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/Lin/projects/MRCViewer/build/moc_MRCViewer.cxx -o CMakeFiles/MRCViewer.dir/moc_MRCViewer.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lin/MRCViewer/build/moc_MRCViewer.cxx -o CMakeFiles/MRCViewer.dir/moc_MRCViewer.s
 
 CMakeFiles/MRCViewer.dir/moc_MRCViewer.o.requires:
 .PHONY : CMakeFiles/MRCViewer.dir/moc_MRCViewer.o.requires
@@ -125,23 +125,44 @@ CMakeFiles/MRCViewer.dir/moc_MRCViewer.o.provides.build: CMakeFiles/MRCViewer.di
 
 # Object files for target MRCViewer
 MRCViewer_OBJECTS = \
-"CMakeFiles/MRCViewer.dir/main.o" \
 "CMakeFiles/MRCViewer.dir/MRCViewer.o" \
+"CMakeFiles/MRCViewer.dir/main.o" \
 "CMakeFiles/MRCViewer.dir/moc_MRCViewer.o"
 
 # External object files for target MRCViewer
 MRCViewer_EXTERNAL_OBJECTS =
 
-bin/MRCViewer: CMakeFiles/MRCViewer.dir/main.o
 bin/MRCViewer: CMakeFiles/MRCViewer.dir/MRCViewer.o
+bin/MRCViewer: CMakeFiles/MRCViewer.dir/main.o
 bin/MRCViewer: CMakeFiles/MRCViewer.dir/moc_MRCViewer.o
 bin/MRCViewer: CMakeFiles/MRCViewer.dir/build.make
-bin/MRCViewer: /usr/lib64/libQtCore_debug.so
-bin/MRCViewer: /usr/lib64/libQtGui_debug.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libQtCore.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/MRCViewer: lib/libmrcimg.a
 bin/MRCViewer: lib/msg_map/lib/libutil.a
 bin/MRCViewer: lib/msg_map/lib/libcore.a
+bin/MRCViewer: lib/libXyzView.a
 bin/MRCViewer: lib/msg_map/lib/libutil.a
+bin/MRCViewer: lib/libImageViewWindow.a
+bin/MRCViewer: lib/libXyzView.a
+bin/MRCViewer: lib/libImageViewWindow.a
+bin/MRCViewer: lib/libmrcimg.a
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libQtOpenGL.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libGLU.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libGL.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libSM.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libICE.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libX11.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libXext.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libGLU.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libGL.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libSM.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libICE.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libX11.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libXext.so
+bin/MRCViewer: lib/libresource.a
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libQtCore.so
+bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/MRCViewer: CMakeFiles/MRCViewer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable bin/MRCViewer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MRCViewer.dir/link.txt --verbose=$(VERBOSE)
@@ -150,8 +171,8 @@ bin/MRCViewer: CMakeFiles/MRCViewer.dir/link.txt
 CMakeFiles/MRCViewer.dir/build: bin/MRCViewer
 .PHONY : CMakeFiles/MRCViewer.dir/build
 
-CMakeFiles/MRCViewer.dir/requires: CMakeFiles/MRCViewer.dir/main.o.requires
 CMakeFiles/MRCViewer.dir/requires: CMakeFiles/MRCViewer.dir/MRCViewer.o.requires
+CMakeFiles/MRCViewer.dir/requires: CMakeFiles/MRCViewer.dir/main.o.requires
 CMakeFiles/MRCViewer.dir/requires: CMakeFiles/MRCViewer.dir/moc_MRCViewer.o.requires
 .PHONY : CMakeFiles/MRCViewer.dir/requires
 
@@ -160,6 +181,6 @@ CMakeFiles/MRCViewer.dir/clean:
 .PHONY : CMakeFiles/MRCViewer.dir/clean
 
 CMakeFiles/MRCViewer.dir/depend: moc_MRCViewer.cxx
-	cd /home/Lin/projects/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/Lin/projects/MRCViewer /home/Lin/projects/MRCViewer /home/Lin/projects/MRCViewer/build /home/Lin/projects/MRCViewer/build /home/Lin/projects/MRCViewer/build/CMakeFiles/MRCViewer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lin/MRCViewer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lin/MRCViewer /home/lin/MRCViewer /home/lin/MRCViewer/build /home/lin/MRCViewer/build /home/lin/MRCViewer/build/CMakeFiles/MRCViewer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MRCViewer.dir/depend
 

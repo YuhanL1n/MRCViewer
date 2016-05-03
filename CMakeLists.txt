@@ -14,16 +14,16 @@ include(${QT_USE_FILE})
 include_directories(${QT_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} ${SRCDIR}/ui)
 
 #set(MainWindow_UIS ui_mainWindow.h)
-set(MainWindow_SRCS MRCViewer.cpp .)
+set(MainWindow_SRCS MRCViewer.cpp main.cpp)
 
 #qt4_automoc(${MainWindow_SRCS})
 qt4_wrap_cpp(MainWindow_MOCS MRCViewer.h)
 #qt4_wrap_ui(MainWindow_UIS mainWindow.ui)
 
-add_executable(MRCViewer main.cpp ${MainWindow_SRCS} ${MainWindow_MOCS}  ${MainWindow_UIS})
+add_executable(MRCViewer  ${MainWindow_SRCS} ${MainWindow_MOCS}  ${MainWindow_UIS})
 MESSAGE(STATUS "building main")
 MESSAGE(STATUS ${RESOURCES_RCC})
-target_link_libraries(MRCViewer ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY}  mrcimg util core 
+target_link_libraries(MRCViewer ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY}  mrcimg util core XyzView
 			    )
 			    
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)

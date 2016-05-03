@@ -8,3 +8,4 @@ MESSAGE(STATUS ${RESOURCES_RCC})
 
 add_library(resource  ${RESOURCES_RCC})
 target_link_libraries(resource ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
+add_subdirectory(images)

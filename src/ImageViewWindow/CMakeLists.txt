@@ -4,7 +4,7 @@ find_package(Qt4 REQUIRED)
 include(${QT_USE_FILE})
 include_directories(${QT_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR}  ${SRCDIR}/ui)
 
-set(ImageViewWindow_SRCS ImageViewWindow.cpp ImgInfo.cpp)
+set(ImageViewWindow_SRCS ImgInfo.cpp)
 #set(ImageViewWindow_RESOURCES file.qrc)
 
 qt4_automoc(${ImageViewWindow_SRCS})

@@ -15,6 +15,8 @@
 #include <QString>
 #include <QtCore/qcoreapplication.h>
 #include <mrcimg/mrc2img.h>
+#include "XyzView/XyzWindow.h"
+#include "XyzView/ImageView.h"
 using namespace util;
 class MRCViewer : public QMainWindow
 {
@@ -34,6 +36,7 @@ private:
     QString FileName;
     
     MrcStack *MrcReader;
+    XyzWindow *Window;
     void InitWidget();
     
 private slots:

@@ -13,7 +13,6 @@
 #define MRC_CFLOAT_AMP_RAD       21           /* COMPLEX FLOAT mode, but in amplitude and phase(  ) form */
 #define MRC_CFLOAT_AMP_DEG       22           /* COMPLEX FLOAT mode, but in amplitude and phase( degree ) form */
 
-
 #define MRC_LABEL_SIZE         79
 #define MRC_NEXTRA             16
 #define MRC_NLABELS            10
@@ -59,7 +58,6 @@ typedef struct MRCheader
 
 
     /* 64 bytes */
-
     int   next;
     short   creatid;  /* Creator id, hvem = 1000, DeltaVision = -16224 */
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/Lin/projects/MRCViewer/lib/msg_map
+# Install script for directory: /home/lin/MRCViewer/lib/msg_map
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,13 +29,13 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
 # Install shared libraries without execute permission?
 IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  SET(CMAKE_INSTALL_SO_NO_EXE "0")
+  SET(CMAKE_INSTALL_SO_NO_EXE "1")
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/Lin/projects/MRCViewer/build/lib/msg_map/lib/cmake_install.cmake")
-  INCLUDE("/home/Lin/projects/MRCViewer/build/lib/msg_map/src/cmake_install.cmake")
+  INCLUDE("/home/lin/MRCViewer/build/lib/msg_map/lib/cmake_install.cmake")
+  INCLUDE("/home/lin/MRCViewer/build/lib/msg_map/src/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

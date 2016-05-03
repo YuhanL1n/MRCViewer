@@ -2,7 +2,7 @@
 #include "b3dgfx.h"
 
 #include "mrcimg/img_util.h"
-#include "widget/LoadImgWin.h"
+// #include "widget/LoadImgWin.h"
 #include "func.h"
 #include <QtGui>
 #include <math.h>
@@ -130,10 +130,10 @@ XyzWindow::~XyzWindow()
 
 void XyzWindow::CreateActions()
 {
-  m_EnlargeAction = new QAction(QIcon(":/images/zoomin.png"),tr("放大"),this);
+	m_EnlargeAction = new QAction(QIcon("/home/lin/MRCViewer/src/resource/images/zoomin.png"),tr("放大"),this);
   connect(m_EnlargeAction,SIGNAL(triggered()) , this , SLOT(zoomUp()));
   
-  m_ShrinkAction = new QAction(QIcon(":/images/zoomout.png") , tr("缩小") , this);
+  m_ShrinkAction = new QAction(QIcon("/home/lin/MRCViewer/src/resource/images/zoomout.png") , tr("缩小") , this);
   connect(m_ShrinkAction , SIGNAL(triggered()) , this , SLOT(zoomDown()));
 }
 
@@ -279,18 +279,18 @@ void XyzWindow::LoadImageData()
   qDebug()<<"Load Image Data";
   
     //processbar
-  LoadImgWin LoadImgBar;
-  LoadImgBar.show();
-  LoadImgBar.SetRange(0 , nz);
-  QString s = QString("0/%1").arg(nz);
-    LoadImgBar.SetLabel(QString("0/%1").arg(nz));
+//   LoadImgWin LoadImgBar;
+//   LoadImgBar.show();
+//   LoadImgBar.SetRange(0 , nz);
+//   QString s = QString("0/%1").arg(nz);
+//     LoadImgBar.SetLabel(QString("0/%1").arg(nz));
     
       IplImage* iplimage;
     mData = new unsigned char*[nz];
     for(int i=0;i<nz;i++){
 
-    LoadImgBar.SetValue(i);
-    LoadImgBar.SetLabel(QString("%1/%2").arg(i).arg(nz));
+//     LoadImgBar.SetValue(i);
+//     LoadImgBar.SetLabel(QString("%1/%2").arg(i).arg(nz));
     
    iplimage = mVi->GetIplImage(i);
    

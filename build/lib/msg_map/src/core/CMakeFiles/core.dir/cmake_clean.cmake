@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/core.dir/thread.cpp.o"
-  "CMakeFiles/core.dir/proxy.cpp.o"
   "CMakeFiles/core.dir/msg_map.cpp.o"
+  "CMakeFiles/core.dir/proxy.cpp.o"
+  "CMakeFiles/core.dir/thread.cpp.o"
   "../../lib/libcore.pdb"
   "../../lib/libcore.a"
 )

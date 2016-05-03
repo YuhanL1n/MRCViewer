@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/mrcimg.dir/GraphUtils.o"
-  "CMakeFiles/mrcimg.dir/mrcheader.o"
   "CMakeFiles/mrcimg.dir/mrc2img.o"
+  "CMakeFiles/mrcimg.dir/mrcheader.o"
+  "CMakeFiles/mrcimg.dir/GraphUtils.o"
   "CMakeFiles/mrcimg.dir/img_util.o"
   "../../lib/libmrcimg.pdb"
   "../../lib/libmrcimg.a"

@@ -38,30 +38,32 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Lin/projects/MRCViewer
+CMAKE_SOURCE_DIR = /home/lin/MRCViewer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Lin/projects/MRCViewer/build
+CMAKE_BINARY_DIR = /home/lin/MRCViewer/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/MRCViewer.dir
 
 # All Build rule for target.
-CMakeFiles/MRCViewer.dir/all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 CMakeFiles/MRCViewer.dir/all: lib/msg_map/src/util/CMakeFiles/util.dir/all
+CMakeFiles/MRCViewer.dir/all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 CMakeFiles/MRCViewer.dir/all: src/mrcimg/CMakeFiles/mrcimg.dir/all
+CMakeFiles/MRCViewer.dir/all: src/XyzView/CMakeFiles/XyzView.dir/all
+CMakeFiles/MRCViewer.dir/all: src/resource/CMakeFiles/resource.dir/all
 	$(MAKE) -f CMakeFiles/MRCViewer.dir/build.make CMakeFiles/MRCViewer.dir/depend
 	$(MAKE) -f CMakeFiles/MRCViewer.dir/build.make CMakeFiles/MRCViewer.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  5 6 7 8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  3 4 5 6
 	@echo "Built target MRCViewer"
 .PHONY : CMakeFiles/MRCViewer.dir/all
 
@@ -71,9 +73,9 @@ all: CMakeFiles/MRCViewer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MRCViewer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 26
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MRCViewer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : CMakeFiles/MRCViewer.dir/rule
 
 # Convenience name for target.
@@ -202,11 +204,11 @@ lib/msg_map/src/test/preinstall:
 
 # All Build rule for target.
 lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/custom/CMakeFiles/custom.dir/all
-lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/util/CMakeFiles/util.dir/all
+lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 	$(MAKE) -f lib/msg_map/src/test/CMakeFiles/test.dir/build.make lib/msg_map/src/test/CMakeFiles/test.dir/depend
 	$(MAKE) -f lib/msg_map/src/test/CMakeFiles/test.dir/build.make lib/msg_map/src/test/CMakeFiles/test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  30
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  29
 	@echo "Built target test"
 .PHONY : lib/msg_map/src/test/CMakeFiles/test.dir/all
 
@@ -216,9 +218,9 @@ all: lib/msg_map/src/test/CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
 lib/msg_map/src/test/CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/test/CMakeFiles/test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : lib/msg_map/src/test/CMakeFiles/test.dir/rule
 
 # Convenience name for target.
@@ -256,7 +258,7 @@ lib/msg_map/src/core/preinstall:
 lib/msg_map/src/core/CMakeFiles/core.dir/all: lib/msg_map/src/util/CMakeFiles/util.dir/all
 	$(MAKE) -f lib/msg_map/src/core/CMakeFiles/core.dir/build.make lib/msg_map/src/core/CMakeFiles/core.dir/depend
 	$(MAKE) -f lib/msg_map/src/core/CMakeFiles/core.dir/build.make lib/msg_map/src/core/CMakeFiles/core.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  19 20 21
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  18 19 20
 	@echo "Built target core"
 .PHONY : lib/msg_map/src/core/CMakeFiles/core.dir/all
 
@@ -266,9 +268,9 @@ all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
 lib/msg_map/src/core/CMakeFiles/core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/core/CMakeFiles/core.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : lib/msg_map/src/core/CMakeFiles/core.dir/rule
 
 # Convenience name for target.
@@ -306,7 +308,7 @@ lib/msg_map/src/util/preinstall:
 lib/msg_map/src/util/CMakeFiles/util.dir/all:
 	$(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/depend
 	$(MAKE) -f lib/msg_map/src/util/CMakeFiles/util.dir/build.make lib/msg_map/src/util/CMakeFiles/util.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  31
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  30
 	@echo "Built target util"
 .PHONY : lib/msg_map/src/util/CMakeFiles/util.dir/all
 
@@ -316,9 +318,9 @@ all: lib/msg_map/src/util/CMakeFiles/util.dir/all
 
 # Build rule for subdir invocation for target.
 lib/msg_map/src/util/CMakeFiles/util.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/util/CMakeFiles/util.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : lib/msg_map/src/util/CMakeFiles/util.dir/rule
 
 # Convenience name for target.
@@ -356,7 +358,7 @@ lib/msg_map/src/custom/preinstall:
 lib/msg_map/src/custom/CMakeFiles/custom.dir/all:
 	$(MAKE) -f lib/msg_map/src/custom/CMakeFiles/custom.dir/build.make lib/msg_map/src/custom/CMakeFiles/custom.dir/depend
 	$(MAKE) -f lib/msg_map/src/custom/CMakeFiles/custom.dir/build.make lib/msg_map/src/custom/CMakeFiles/custom.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  22 23
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  21 22
 	@echo "Built target custom"
 .PHONY : lib/msg_map/src/custom/CMakeFiles/custom.dir/all
 
@@ -366,9 +368,9 @@ all: lib/msg_map/src/custom/CMakeFiles/custom.dir/all
 
 # Build rule for subdir invocation for target.
 lib/msg_map/src/custom/CMakeFiles/custom.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 lib/msg_map/src/custom/CMakeFiles/custom.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : lib/msg_map/src/custom/CMakeFiles/custom.dir/rule
 
 # Convenience name for target.
@@ -407,6 +409,7 @@ src/all: src/mrcimg/all
 src/all: src/resource/all
 src/all: src/XyzView/all
 src/all: src/ImageViewWindow/all
+src/all: src/buff/all
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
@@ -414,6 +417,7 @@ src/clean: src/mrcimg/clean
 src/clean: src/resource/clean
 src/clean: src/XyzView/clean
 src/clean: src/ImageViewWindow/clean
+src/clean: src/buff/clean
 .PHONY : src/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -421,6 +425,7 @@ src/preinstall: src/mrcimg/preinstall
 src/preinstall: src/resource/preinstall
 src/preinstall: src/XyzView/preinstall
 src/preinstall: src/ImageViewWindow/preinstall
+src/preinstall: src/buff/preinstall
 .PHONY : src/preinstall
 
 #=============================================================================
@@ -445,7 +450,7 @@ src/mrcimg/preinstall:
 src/mrcimg/CMakeFiles/mrcimg.dir/all:
 	$(MAKE) -f src/mrcimg/CMakeFiles/mrcimg.dir/build.make src/mrcimg/CMakeFiles/mrcimg.dir/depend
 	$(MAKE) -f src/mrcimg/CMakeFiles/mrcimg.dir/build.make src/mrcimg/CMakeFiles/mrcimg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  24 25 26 27
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  23 24 25 26
 	@echo "Built target mrcimg"
 .PHONY : src/mrcimg/CMakeFiles/mrcimg.dir/all
 
@@ -455,9 +460,9 @@ all: src/mrcimg/CMakeFiles/mrcimg.dir/all
 
 # Build rule for subdir invocation for target.
 src/mrcimg/CMakeFiles/mrcimg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 src/mrcimg/CMakeFiles/mrcimg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : src/mrcimg/CMakeFiles/mrcimg.dir/rule
 
 # Convenience name for target.
@@ -478,14 +483,16 @@ clean: src/mrcimg/CMakeFiles/mrcimg.dir/clean
 
 # Convenience name for "all" pass in the directory.
 src/resource/all: src/resource/CMakeFiles/resource.dir/all
+src/resource/all: src/resource/images/all
 .PHONY : src/resource/all
 
 # Convenience name for "clean" pass in the directory.
 src/resource/clean: src/resource/CMakeFiles/resource.dir/clean
+src/resource/clean: src/resource/images/clean
 .PHONY : src/resource/clean
 
 # Convenience name for "preinstall" pass in the directory.
-src/resource/preinstall:
+src/resource/preinstall: src/resource/images/preinstall
 .PHONY : src/resource/preinstall
 
 #=============================================================================
@@ -495,7 +502,7 @@ src/resource/preinstall:
 src/resource/CMakeFiles/resource.dir/all:
 	$(MAKE) -f src/resource/CMakeFiles/resource.dir/build.make src/resource/CMakeFiles/resource.dir/depend
 	$(MAKE) -f src/resource/CMakeFiles/resource.dir/build.make src/resource/CMakeFiles/resource.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  28 29
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  27 28
 	@echo "Built target resource"
 .PHONY : src/resource/CMakeFiles/resource.dir/all
 
@@ -505,9 +512,9 @@ all: src/resource/CMakeFiles/resource.dir/all
 
 # Build rule for subdir invocation for target.
 src/resource/CMakeFiles/resource.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 src/resource/CMakeFiles/resource.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : src/resource/CMakeFiles/resource.dir/rule
 
 # Convenience name for target.
@@ -522,6 +529,21 @@ src/resource/CMakeFiles/resource.dir/clean:
 # clean rule for target.
 clean: src/resource/CMakeFiles/resource.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/resource/images
+
+# Convenience name for "all" pass in the directory.
+src/resource/images/all:
+.PHONY : src/resource/images/all
+
+# Convenience name for "clean" pass in the directory.
+src/resource/images/clean:
+.PHONY : src/resource/images/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/resource/images/preinstall:
+.PHONY : src/resource/images/preinstall
 
 #=============================================================================
 # Directory level rules for directory src/XyzView
@@ -545,7 +567,7 @@ src/XyzView/preinstall:
 src/XyzView/CMakeFiles/XyzView.dir/all: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
 	$(MAKE) -f src/XyzView/CMakeFiles/XyzView.dir/build.make src/XyzView/CMakeFiles/XyzView.dir/depend
 	$(MAKE) -f src/XyzView/CMakeFiles/XyzView.dir/build.make src/XyzView/CMakeFiles/XyzView.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  9 10 11 12 13 14 15 16 17 18
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  7 8 9 10 11 12 13 14 15 16
 	@echo "Built target XyzView"
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/all
 
@@ -555,9 +577,9 @@ all: src/XyzView/CMakeFiles/XyzView.dir/all
 
 # Build rule for subdir invocation for target.
 src/XyzView/CMakeFiles/XyzView.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 src/XyzView/CMakeFiles/XyzView.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/rule
 
 # Convenience name for target.
@@ -592,11 +614,11 @@ src/ImageViewWindow/preinstall:
 # Target rules for target src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir
 
 # All Build rule for target.
-src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/resource/CMakeFiles/resource.dir/all
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/mrcimg/CMakeFiles/mrcimg.dir/all
+src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/resource/CMakeFiles/resource.dir/all
 	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/depend
 	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/Lin/projects/MRCViewer/build/CMakeFiles  1 2 3 4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  1 2
 	@echo "Built target ImageViewWindow"
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
 
@@ -606,9 +628,9 @@ all: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
 
 # Build rule for subdir invocation for target.
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Lin/projects/MRCViewer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/rule
 
 # Convenience name for target.
@@ -622,6 +644,56 @@ src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean:
 
 # clean rule for target.
 clean: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/buff
+
+# Convenience name for "all" pass in the directory.
+src/buff/all: src/buff/CMakeFiles/buff.dir/all
+.PHONY : src/buff/all
+
+# Convenience name for "clean" pass in the directory.
+src/buff/clean: src/buff/CMakeFiles/buff.dir/clean
+.PHONY : src/buff/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/buff/preinstall:
+.PHONY : src/buff/preinstall
+
+#=============================================================================
+# Target rules for target src/buff/CMakeFiles/buff.dir
+
+# All Build rule for target.
+src/buff/CMakeFiles/buff.dir/all:
+	$(MAKE) -f src/buff/CMakeFiles/buff.dir/build.make src/buff/CMakeFiles/buff.dir/depend
+	$(MAKE) -f src/buff/CMakeFiles/buff.dir/build.make src/buff/CMakeFiles/buff.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  17
+	@echo "Built target buff"
+.PHONY : src/buff/CMakeFiles/buff.dir/all
+
+# Include target in all.
+all: src/buff/CMakeFiles/buff.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/buff/CMakeFiles/buff.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 src/buff/CMakeFiles/buff.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
+.PHONY : src/buff/CMakeFiles/buff.dir/rule
+
+# Convenience name for target.
+buff: src/buff/CMakeFiles/buff.dir/rule
+.PHONY : buff
+
+# clean rule for target.
+src/buff/CMakeFiles/buff.dir/clean:
+	$(MAKE) -f src/buff/CMakeFiles/buff.dir/build.make src/buff/CMakeFiles/buff.dir/clean
+.PHONY : src/buff/CMakeFiles/buff.dir/clean
+
+# clean rule for target.
+clean: src/buff/CMakeFiles/buff.dir/clean
 .PHONY : clean
 
 #=============================================================================

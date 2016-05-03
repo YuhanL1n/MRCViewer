@@ -1,6 +1,5 @@
 #include "MRCViewer.h"
 
-
 MRCViewer::MRCViewer()
 {
     InitWidget();
@@ -22,7 +21,6 @@ void MRCViewer::InitWidget()
     OpenRecentAction->setText("Open Recent File");
     FileMenu->addAction(OpenFileAction);
     FileMenu->addAction(OpenRecentAction);
-    
 
 }
 void MRCViewer::OpenFile()
@@ -35,9 +33,11 @@ void MRCViewer::OpenFile()
 	QMessageBox::warning(NULL , tr("open image") , tr("Can't Open Image File!")  ,QMessageBox::Ok);
 	return;
     }
-    cvNamedWindow("1",CV_WINDOW_AUTOSIZE);
-    cvShowImage("image",MrcReader->GetIplImage(0));
-    cvWaitKey(0);
+    Window = new XyzWindow(MrcReader,this,0);
+    this->hide();
+//     cvNamedWindow("1",CV_WINDOW_AUTOSIZE);
+//     cvShowImage("image",MrcReader->GetIplImage(0));
+//     cvWaitKey(0);
     
 }
 
