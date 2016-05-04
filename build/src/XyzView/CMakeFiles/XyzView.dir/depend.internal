@@ -61,6 +61,8 @@ src/XyzView/CMakeFiles/XyzView.dir/XyzWindow.o
  ../lib/opencv_2.3.1/opencv2/objdetect/objdetect.hpp
  ../lib/opencv_2.3.1/opencv2/video/tracking.hpp
  ../src/ImageViewWindow/ImgInfo.h
+ ../src/XyzView/func.h
+ ../src/buff/buff.h
  ../src/mrcimg/img_util.h
  ../src/mrcimg/mrc2img.h
  ../src/mrcimg/mrcheader.h
@@ -1470,6 +1472,8 @@ src/XyzView/CMakeFiles/XyzView.dir/moc_XyzWindow.o
  ../lib/opencv_2.3.1/opencv2/objdetect/objdetect.hpp
  ../lib/opencv_2.3.1/opencv2/video/tracking.hpp
  ../src/ImageViewWindow/ImgInfo.h
+ ../src/XyzView/func.h
+ ../src/buff/buff.h
  ../src/mrcimg/img_util.h
  ../src/mrcimg/mrc2img.h
  ../src/mrcimg/mrcheader.h

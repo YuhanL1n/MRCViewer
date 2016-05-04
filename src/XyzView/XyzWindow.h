@@ -14,6 +14,7 @@
 #include "mrcimg/mrc2img.h"
 #include "b3dgfx.h"
 #include "ImageViewWindow/ImgInfo.h"
+#include "buff/buff.h"
 
 #define XY_VIEW 0
 #define XZ_VIEW 1
@@ -44,7 +45,7 @@ public:
   
   unsigned char** mData;
   unsigned char* sdata;
-  
+  Buff *buf;
   int nx , ny , nz; /*图片大小*/
   int mx , my , mz; /*当前图片显示尺寸*/
   int wx , wy , wz;/*界面中显示的x，y，z大小*/

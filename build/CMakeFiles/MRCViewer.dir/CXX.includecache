@@ -737,6 +737,8 @@ b3dgfx.h
 ../src/XyzView/b3dgfx.h
 ImageViewWindow/ImgInfo.h
 ../src/XyzView/ImageViewWindow/ImgInfo.h
+buff/buff.h
+../src/XyzView/buff/buff.h
 
 ../src/XyzView/b3dgfx.h
 qgl.h
@@ -751,6 +753,16 @@ GL/glu.h
 ../src/XyzView/func.h
 mrcimg/mrc2img.h
 ../src/XyzView/mrcimg/mrc2img.h
+
+../src/buff/buff.h
+cv.hpp
+-
+mrcimg/mrc2img.h
+../src/buff/mrcimg/mrc2img.h
+mrcimg/img_util.h
+../src/buff/mrcimg/img_util.h
+XyzView/func.h
+../src/buff/XyzView/func.h
 
 ../src/mrcimg/img_util.h
 util/exception.h
@@ -783,6 +795,10 @@ img_util.h
 ../src/mrcimg/img_util.h
 
 ../src/mrcimg/mrcheader.h
+
+/home/lin/MRCViewer/MRCViewer.cpp
+MRCViewer.h
+/home/lin/MRCViewer/MRCViewer.h
 
 /home/lin/MRCViewer/MRCViewer.h
 QtGui
@@ -820,6 +836,12 @@ XyzView/ImageView.h
 
 /home/lin/MRCViewer/build/moc_MRCViewer.cxx
 ../MRCViewer.h
+/home/lin/MRCViewer/MRCViewer.h
+
+/home/lin/MRCViewer/main.cpp
+QtGui/QApplication
+-
+MRCViewer.h
 /home/lin/MRCViewer/MRCViewer.h
 
 /usr/include/qt4/Qt3Support/q3cstring.h

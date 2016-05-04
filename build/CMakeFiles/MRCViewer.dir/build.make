@@ -160,6 +160,7 @@ bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libSM.so
 bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libICE.so
 bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libX11.so
 bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libXext.so
+bin/MRCViewer: lib/libbuff.a
 bin/MRCViewer: lib/libresource.a
 bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libQtCore.so
 bin/MRCViewer: /usr/lib/x86_64-linux-gnu/libQtGui.so

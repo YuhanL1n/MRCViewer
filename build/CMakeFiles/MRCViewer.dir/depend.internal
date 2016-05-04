@@ -63,6 +63,7 @@ CMakeFiles/MRCViewer.dir/MRCViewer.o
  ../src/XyzView/XyzWindow.h
  ../src/XyzView/b3dgfx.h
  ../src/XyzView/func.h
+ ../src/buff/buff.h
  ../src/mrcimg/img_util.h
  ../src/mrcimg/mrc2img.h
  ../src/mrcimg/mrcheader.h
@@ -575,6 +576,7 @@ CMakeFiles/MRCViewer.dir/main.o
  ../src/XyzView/XyzWindow.h
  ../src/XyzView/b3dgfx.h
  ../src/XyzView/func.h
+ ../src/buff/buff.h
  ../src/mrcimg/img_util.h
  ../src/mrcimg/mrc2img.h
  ../src/mrcimg/mrcheader.h
@@ -1087,6 +1089,7 @@ CMakeFiles/MRCViewer.dir/moc_MRCViewer.o
  ../src/XyzView/XyzWindow.h
  ../src/XyzView/b3dgfx.h
  ../src/XyzView/func.h
+ ../src/buff/buff.h
  ../src/mrcimg/img_util.h
  ../src/mrcimg/mrc2img.h
  ../src/mrcimg/mrcheader.h

@@ -20,6 +20,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/lin/MRCViewer/build/src/resource/CMakeFiles/resource.dir/DependInfo.cmake"
   "/home/lin/MRCViewer/build/src/XyzView/CMakeFiles/XyzView.dir/DependInfo.cmake"
   "/home/lin/MRCViewer/build/src/mrcimg/CMakeFiles/mrcimg.dir/DependInfo.cmake"
+  "/home/lin/MRCViewer/build/src/buff/CMakeFiles/buff.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

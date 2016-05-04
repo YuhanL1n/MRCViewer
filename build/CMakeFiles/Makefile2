@@ -57,10 +57,11 @@ CMAKE_BINARY_DIR = /home/lin/MRCViewer/build
 
 # All Build rule for target.
 CMakeFiles/MRCViewer.dir/all: lib/msg_map/src/util/CMakeFiles/util.dir/all
-CMakeFiles/MRCViewer.dir/all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 CMakeFiles/MRCViewer.dir/all: src/mrcimg/CMakeFiles/mrcimg.dir/all
+CMakeFiles/MRCViewer.dir/all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 CMakeFiles/MRCViewer.dir/all: src/XyzView/CMakeFiles/XyzView.dir/all
 CMakeFiles/MRCViewer.dir/all: src/resource/CMakeFiles/resource.dir/all
+CMakeFiles/MRCViewer.dir/all: src/buff/CMakeFiles/buff.dir/all
 	$(MAKE) -f CMakeFiles/MRCViewer.dir/build.make CMakeFiles/MRCViewer.dir/depend
 	$(MAKE) -f CMakeFiles/MRCViewer.dir/build.make CMakeFiles/MRCViewer.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  3 4 5 6
@@ -73,7 +74,7 @@ all: CMakeFiles/MRCViewer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MRCViewer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 27
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MRCViewer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : CMakeFiles/MRCViewer.dir/rule
@@ -203,8 +204,8 @@ lib/msg_map/src/test/preinstall:
 # Target rules for target lib/msg_map/src/test/CMakeFiles/test.dir
 
 # All Build rule for target.
-lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/custom/CMakeFiles/custom.dir/all
 lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/util/CMakeFiles/util.dir/all
+lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/custom/CMakeFiles/custom.dir/all
 lib/msg_map/src/test/CMakeFiles/test.dir/all: lib/msg_map/src/core/CMakeFiles/core.dir/all
 	$(MAKE) -f lib/msg_map/src/test/CMakeFiles/test.dir/build.make lib/msg_map/src/test/CMakeFiles/test.dir/depend
 	$(MAKE) -f lib/msg_map/src/test/CMakeFiles/test.dir/build.make lib/msg_map/src/test/CMakeFiles/test.dir/build
@@ -577,7 +578,7 @@ all: src/XyzView/CMakeFiles/XyzView.dir/all
 
 # Build rule for subdir invocation for target.
 src/XyzView/CMakeFiles/XyzView.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 19
 	$(MAKE) -f CMakeFiles/Makefile2 src/XyzView/CMakeFiles/XyzView.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : src/XyzView/CMakeFiles/XyzView.dir/rule
@@ -616,6 +617,7 @@ src/ImageViewWindow/preinstall:
 # All Build rule for target.
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/mrcimg/CMakeFiles/mrcimg.dir/all
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/resource/CMakeFiles/resource.dir/all
+src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all: src/buff/CMakeFiles/buff.dir/all
 	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/depend
 	$(MAKE) -f src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build.make src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/lin/MRCViewer/build/CMakeFiles  1 2
@@ -628,7 +630,7 @@ all: src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
 
 # Build rule for subdir invocation for target.
 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lin/MRCViewer/build/CMakeFiles 0
 .PHONY : src/ImageViewWindow/CMakeFiles/ImageViewWindow.dir/rule

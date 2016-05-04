@@ -57,6 +57,7 @@ src/buff/CMakeFiles/buff.dir/buff.o: ../lib/opencv_2.3.1/opencv2/imgproc/types_c
 src/buff/CMakeFiles/buff.dir/buff.o: ../lib/opencv_2.3.1/opencv2/legacy/compat.hpp
 src/buff/CMakeFiles/buff.dir/buff.o: ../lib/opencv_2.3.1/opencv2/objdetect/objdetect.hpp
 src/buff/CMakeFiles/buff.dir/buff.o: ../lib/opencv_2.3.1/opencv2/video/tracking.hpp
+src/buff/CMakeFiles/buff.dir/buff.o: ../src/XyzView/func.h
 src/buff/CMakeFiles/buff.dir/buff.o: ../src/mrcimg/img_util.h
 src/buff/CMakeFiles/buff.dir/buff.o: ../src/mrcimg/mrc2img.h
 src/buff/CMakeFiles/buff.dir/buff.o: ../src/mrcimg/mrcheader.h

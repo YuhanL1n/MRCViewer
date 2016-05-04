@@ -23,7 +23,7 @@ add_library(XyzView ${XYZVIEW_SRCS} ${XYZVIEW_MOC})
 
 target_link_libraries(XyzView  ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_LIBRARIES} ${OPENGL_LIBRARIES}  
                       ${OPENGL_gl_LIBRARY}  ${OPENGL_glu_LIBRARY} ${OPENGL_glaux_LIBRARY} opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d 
-	opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy widget resource mrcimg ImageViewWindow)
+	opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy widget resource mrcimg ImageViewWindow buff)
 	
 set_target_properties(XyzView PROPERTIES OUTPUT_NAME "XyzView")
 set_target_properties(XyzView PROPERTIES CLEAN_DIRECT_OUTPUT 1)

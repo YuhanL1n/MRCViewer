@@ -58,6 +58,7 @@ src/buff/CMakeFiles/buff.dir/buff.o
  ../lib/opencv_2.3.1/opencv2/legacy/compat.hpp
  ../lib/opencv_2.3.1/opencv2/objdetect/objdetect.hpp
  ../lib/opencv_2.3.1/opencv2/video/tracking.hpp
+ ../src/XyzView/func.h
  ../src/mrcimg/img_util.h
  ../src/mrcimg/mrc2img.h
  ../src/mrcimg/mrcheader.h

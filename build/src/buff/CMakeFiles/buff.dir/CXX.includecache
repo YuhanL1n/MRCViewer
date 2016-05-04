@@ -684,6 +684,10 @@ opencv2/core/core.hpp
 opencv2/imgproc/imgproc_c.h
 ../lib/opencv_2.3.1/opencv2/video/opencv2/imgproc/imgproc_c.h
 
+../src/XyzView/func.h
+mrcimg/mrc2img.h
+../src/XyzView/mrcimg/mrc2img.h
+
 ../src/mrcimg/img_util.h
 util/exception.h
 ../src/mrcimg/util/exception.h
@@ -731,4 +735,6 @@ mrcimg/mrc2img.h
 /home/lin/MRCViewer/src/buff/mrcimg/mrc2img.h
 mrcimg/img_util.h
 /home/lin/MRCViewer/src/buff/mrcimg/img_util.h
+XyzView/func.h
+/home/lin/MRCViewer/src/buff/XyzView/func.h
 
