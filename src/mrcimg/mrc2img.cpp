@@ -70,7 +70,7 @@ bool util::MrcStack::AnalysLabel(const std::string& label, std::string& key, std
     return true;
 }
 
-IplImage* util::MrcStack::GetIplImage(int index)
+IplImage* util::MrcStack::GetXYIplImage(int index)
 {
 //     assert(header != NULL && index >= 0 && index < header->nz);
     assert(in.good());
@@ -87,7 +87,7 @@ IplImage* util::MrcStack::GetIplImage(int index)
     
     switch(header->mode){
     case MRC_MODE_BYTE:{
-	unsigned char* tmpbuf = new unsigned char[bufsize];
+	unsigned char* 	tmpbuf = new unsigned char[bufsize];
 	for(int y = 0; y < ny; y++){
 	    in.seekg(sizeof(MrcHeader)+header->next+(index*nx*ny+y*nx)*sizeof(unsigned char), std::ios::beg);
 	    in.read((char*)&(tmpbuf[y*nx]), nx*sizeof(unsigned char));
@@ -129,6 +129,132 @@ IplImage* util::MrcStack::GetIplImage(int index)
     
     return img;
 }
+IplImage* util::MrcStack::GetYZIplImage(int index)
+{
+	//     assert(header != NULL && index >= 0 && index < header->nz);
+	assert(in.good());
+	
+	const int& nx = header->nx;
+	const int& ny = header->ny;			//the coordinate is different(have not been tested)
+	const int& nz = header->nz;
+	
+	CvSize size;
+	size.width = nz;
+	size.height = ny;
+	IplImage *img = cvCreateImage(size, IPL_DEPTH_32F, 1); 
+	
+	int bufsize = ny*nz;
+	
+	switch(header->mode){
+		case MRC_MODE_BYTE:{
+			unsigned char* 	tmpbuf = new unsigned char[bufsize];
+			for(int y = 0; y< ny; y++){
+				for(int z=0; z<nz; z++){
+					in.seekg(sizeof(MrcHeader)+header->next+(z*nx*ny+y*nx+index)*sizeof(unsigned char), std::ios::beg);
+					in.read((char*)&(tmpbuf[y*nz+z]), sizeof(unsigned char));
+				}
+			}
+			float* start = (float*)img->imageData;
+			float* end  = start+bufsize;
+			unsigned char* src = tmpbuf;
+			while(start != end){
+				*start++ = *src++/255.0f;
+			}
+			delete [] tmpbuf;
+			break;}
+		case MRC_MODE_SHORT:{
+			short* tmpbuf = new short[bufsize];
+			for(int y = 0; y< ny; y++){
+				for(int z=0; z<nz; z++){
+					in.seekg(sizeof(MrcHeader)+header->next+(z*nx*ny+y*nx+index)*sizeof(short), std::ios::beg);
+					in.read((char*)&(tmpbuf[y*nz+z]), sizeof(short));
+				}
+			}
+			float* start = (float*)img->imageData;
+			float* end  = start+bufsize;
+			short* src = tmpbuf;
+			
+			while(start != end){
+				*start++ = *src++;
+			}
+			delete [] tmpbuf;	
+			break;}
+		case MRC_MODE_FLOAT:{
+			for(int y = 0; y< ny; y++){
+				for(int z=0; z<nz; z++){
+					in.seekg(sizeof(MrcHeader)+header->next+(z*nx*ny+y*nx+index)*sizeof(float), std::ios::beg);
+					in.read((char*)&(((float*)(img->imageData))[y*nz+z]), sizeof(float));
+				}
+			}
+			break;}
+		default:
+			cvReleaseImage(&img);
+			return NULL;
+	}
+	
+	return img;
+}
+IplImage* util::MrcStack::GetXZIplImage(int index)
+{
+	//     assert(header != NULL && index >= 0 && index < header->nz);
+	assert(in.good());
+	
+	const int& nx = header->nx;			//the coordinate is different(have not been tested)
+	const int& ny = header->ny;
+	const int& nz = header->nz;
+	
+	CvSize size;
+	size.width = nx;
+	size.height = nz;
+	IplImage *img = cvCreateImage(size, IPL_DEPTH_32F, 1); 
+	
+	int bufsize = nx*nz;
+	
+	switch(header->mode){
+		case MRC_MODE_BYTE:{
+			unsigned char* 	tmpbuf = new unsigned char[bufsize];
+			for(int z = 0; z < nz; z++){
+				in.seekg(sizeof(MrcHeader)+header->next+(z*nx*ny+index*nx)*sizeof(unsigned char), std::ios::beg);
+				in.read((char*)&(tmpbuf[z*nx]), nx*sizeof(unsigned char));
+			}
+			float* start = (float*)img->imageData;
+			float* end  = start+bufsize;
+			unsigned char* src = tmpbuf;
+			while(start != end){
+				*start++ = *src++/255.0f;
+			}
+			delete [] tmpbuf;
+			break;}
+		case MRC_MODE_SHORT:{
+			short* tmpbuf = new short[bufsize];
+			for(int z = 0; z < nz; z++){
+				in.seekg(sizeof(MrcHeader)+header->next+(z*nx*ny+index*nx)*sizeof(short), std::ios::beg);
+				in.read((char*)&(tmpbuf[z*nx]), nx*sizeof(short));
+			}
+			float* start = (float*)img->imageData;
+			float* end  = start+bufsize;
+			short* src = tmpbuf;
+			
+			while(start != end){
+				*start++ = *src++;
+			}
+			delete [] tmpbuf;	
+			break;}
+		case MRC_MODE_FLOAT:{
+			for(int z = 0; z < nz; z++){
+				in.seekg(sizeof(MrcHeader)+header->next+(z*nx*ny+index*nx)*sizeof(float), std::ios::beg);
+				in.read((char*)&(((float*)(img->imageData))[z*nx]), nx*sizeof(float));
+			}
+			
+			break;}
+		default:
+			cvReleaseImage(&img);
+			return NULL;
+	}
+	
+	return img;
+}
+
 
 void util::MrcStack::PrintHeader ( std::ostream& o ) const
 {

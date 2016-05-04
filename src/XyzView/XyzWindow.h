@@ -93,7 +93,7 @@ private:
   
   void DrawXYImage();
   void DrawXZImage();
-  void DrawZYImage();
+  void DrawYZImage();
    
 public slots:
   void zoomUp();

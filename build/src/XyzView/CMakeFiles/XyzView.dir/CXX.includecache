@@ -734,10 +734,6 @@ img_util.h
 
 ../src/mrcimg/mrcheader.h
 
-/home/lin/MRCViewer/build/src/XyzView/moc_XyzWindow.cxx
-../../../src/XyzView/XyzWindow.h
-/home/lin/MRCViewer/src/XyzView/XyzWindow.h
-
 /home/lin/MRCViewer/src/XyzView/XyzWindow.cpp
 XyzWindow.h
 /home/lin/MRCViewer/src/XyzView/XyzWindow.h

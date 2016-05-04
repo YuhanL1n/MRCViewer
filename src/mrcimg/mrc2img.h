@@ -29,7 +29,11 @@ public:
     
     void Close(){if(header){in.close(); delete header; header = NULL;}}
     
-    IplImage* GetIplImage(int index);
+    IplImage* GetXYIplImage(int index);
+    
+    IplImage* GetYZIplImage(int index);
+    
+    IplImage* GetXZIplImage(int index);
     
     int Size() const{return header->nz;}
     

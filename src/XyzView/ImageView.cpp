@@ -118,7 +118,7 @@ void ImageView::LoadImageData()
 		LoadImgBar.SetValue(i);
 		LoadImgBar.SetLabel(QString("%1/%2").arg(i).arg(nz));
 		
-		iplimage = mVi->GetIplImage(i);
+		iplimage = mVi->GetXYIplImage(i);
 		
 		IplImage* cpy;
 		util::CopyToUChar256(iplimage, &cpy, 255, 0);

@@ -93,7 +93,12 @@ XyzWindow::XyzWindow(util::MrcStack* vi ,QWidget* parent, Qt::WindowFlags flags 
 	m_imginfo = new ImgInfo(this);
 	m_imginfo->setAttribute(Qt::WA_DeleteOnClose);
 	buf=new Buff(mVi);
-	LoadImageData();
+	QString info = QString("Image size : %1*%2\n").arg(nx).arg(ny);
+	m_imginfo->AddInfo(info);
+	info = QString("Sections : %1\n").arg(nz);
+	m_imginfo->AddInfo(info);
+	m_imginfo->show();
+// 	LoadImageData();
 	CreateActions();
 	CreateToolBars();  
 	CreateStatusBar();
@@ -293,7 +298,7 @@ void XyzWindow::LoadImageData()
 		//     LoadImgBar.SetValue(i);
 		//     LoadImgBar.SetLabel(QString("%1/%2").arg(i).arg(nz));
 		
-		iplimage = mVi->GetIplImage(i);
+		iplimage = mVi->GetXYIplImage(i);
 		
 		IplImage* cpy;
 		util::CopyToUChar256(iplimage, &cpy, 255, 0);
@@ -319,7 +324,7 @@ void XyzWindow::DrawImage(int view_type)
 			DrawXZImage();
 			break;
 		case ZY_VIEW:
-			DrawZYImage();
+			DrawYZImage();
 			break;
 	}
 }
@@ -433,8 +438,8 @@ void XyzWindow::DrawXZImage()
 	glDrawPixels(nx, nz, GL_LUMINANCE, GL_UNSIGNED_BYTE, mFdataxz);
 }
 
-void XyzWindow::DrawZYImage()
-{
+void XyzWindow::DrawYZImage()
+	{
 	qDebug("DrawZYImage");
 	// Load data for YZ view
 	LoadYZData();
@@ -459,15 +464,15 @@ void XyzWindow::DrawZYImage()
 
 void XyzWindow::DrawXYImage()
 {
-	if(!buf->toShow(cz)) return;
+	if(!buf->toShowXY(cz)) return;
 	unsigned char* sdata;
 	if(m_imginfo->m_isChanged){
 		//     sdata = new unsigned char[nx*ny];
-		BrightContractAdjust(buf->show->image, mFdataxy , nx*ny , m_imginfo->m_Brightness , m_imginfo->m_Contract);
+		BrightContractAdjust(buf->showXY->image, mFdataxy , nx*ny , m_imginfo->m_Brightness , m_imginfo->m_Contract);
 		sdata = mFdataxy;
 	}
 	else{
-		sdata = buf->show->image;
+		sdata = buf->showXY->image;
 	}
 	//draw XY view
 	//     glClear(GL_COLOR_BUFFER_BIT);
@@ -575,13 +580,14 @@ void XyzWindow::On_Adjust()
 
 void XyzWindow::LoadYZData()
 {
+	if(!buf->toShowYZ(cx)) return;
 	float val;  
 	float contract = m_imginfo->m_Contract;
 	float bright = m_imginfo->m_Brightness;
 	float k = tan((45 + 44*contract)/180*3.14);
 	for(int z = 0 ; z< nz ; z++)
 		for(int y = 0 ; y<ny ; y++){
-			val = mData[z][nx*y + cx];
+			val = buf->showYZ->image[y*nz+z] ;
 			val = (val - 128*(1-bright))*k + 128*(1+bright) ;  
 			//对灰度值的可能溢出进行处理  
 			if(val>255) val=255;  
@@ -592,18 +598,19 @@ void XyzWindow::LoadYZData()
 
 void XyzWindow::LoadXZData()
 {
+	if(!buf->toShowXZ(cy)) return;
 	float val;  
 	float contract = m_imginfo->m_Contract;
 	float bright = m_imginfo->m_Brightness;
 	float k = tan((45 + 44*contract)/180*3.14);
 	for(int x=0 ; x< nx ; x++)
 		for(int z = 0 ; z< nz ; z++){
-			val = mData[z][nx*cy + x];
+			val = buf->showXZ->image[z*nx+x];
 			val = (val - 128*(1-bright))*k + 128*(1+bright) ;  
 			//对灰度值的可能溢出进行处理  
 			if(val>255) val=255;  
 			if(val<0) val=0;  
-			mFdataxz[z*nx + x] = val;
+			mFdataxz[z*nx+x] = val;
 		}
 }
 
@@ -620,7 +627,7 @@ void XyzWindow::Update(int view_type)
 			mXZ_GLw->updateGL();
 			break;
 		case ZY_VIEW:
-			DrawZYImage();
+			DrawYZImage();
 			mYZ_GLw->updateGL();
 			break;
 	}

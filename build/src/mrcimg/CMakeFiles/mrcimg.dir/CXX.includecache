@@ -718,15 +718,5 @@ cv.hpp
 img_util.h
 /home/lin/MRCViewer/src/mrcimg/img_util.h
 
-/home/lin/MRCViewer/src/mrcimg/mrcheader.cpp
-mrcheader.h
-/home/lin/MRCViewer/src/mrcimg/mrcheader.h
-fstream
--
-climits
--
-cassert
--
-
 /home/lin/MRCViewer/src/mrcimg/mrcheader.h
 
