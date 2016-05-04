@@ -139,8 +139,8 @@ IplImage* util::MrcStack::GetYZIplImage(int index)
 	const int& nz = header->nz;
 	
 	CvSize size;
-	size.width = nz;
-	size.height = ny;
+	size.width = ny;
+	size.height = nz;
 	IplImage *img = cvCreateImage(size, IPL_DEPTH_32F, 1); 
 	
 	int bufsize = ny*nz;
